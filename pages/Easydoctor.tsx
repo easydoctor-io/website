@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
   Cloud, Lock, CheckCircle, ArrowRight, Layout, Database, Activity, 
-  Smartphone, BarChart3, Users, Calendar, Bell, ChevronRight, Settings 
+  Smartphone, BarChart3, Users, Calendar, Bell, ChevronRight, Settings,
+  Brain, Heart, Stethoscope, Droplet, Microscope, BookOpen
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
@@ -189,26 +190,130 @@ const Easydoctor: React.FC = () => {
                                         <div className="font-bold text-gray-800">Bianchi L.</div>
                                         <div className="text-gray-500 text-xs">Scompenso C.</div>
                                         <div><span className="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center w-fit gap-1"><Activity className="h-3 w-3" /> ALERT NYHA</span></div>
-                                        <div className="text-right text-eh-petrol font-bold text-xs cursor-pointer">Apri ></div>
+                                        <div className="text-right text-eh-petrol font-bold text-xs cursor-pointer">Apri &gt;</div>
                                     </div>
                                     {/* Row 2 - Ok */}
                                     <div className="grid grid-cols-4 p-3 items-center border-b hover:bg-gray-50 text-sm">
                                         <div className="font-bold text-gray-800">Verdi G.</div>
                                         <div className="text-gray-500 text-xs">Post-Ictus</div>
                                         <div><span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full w-fit">STABILE</span></div>
-                                        <div className="text-right text-eh-petrol font-bold text-xs cursor-pointer">Apri ></div>
+                                        <div className="text-right text-eh-petrol font-bold text-xs cursor-pointer">Apri &gt;</div>
                                     </div>
                                      {/* Row 3 - Pending */}
                                      <div className="grid grid-cols-4 p-3 items-center hover:bg-gray-50 text-sm">
                                         <div className="font-bold text-gray-800">Neri A.</div>
                                         <div className="text-gray-500 text-xs">Ipertensione</div>
                                         <div><span className="bg-yellow-100 text-yellow-700 text-[10px] font-bold px-2 py-0.5 rounded-full w-fit">IN ATTESA</span></div>
-                                        <div className="text-right text-eh-petrol font-bold text-xs cursor-pointer">Apri ></div>
+                                        <div className="text-right text-eh-petrol font-bold text-xs cursor-pointer">Apri &gt;</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                      </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* Science & Evidence Based Section */}
+      <section className="py-24 bg-eh-blue/20 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="inline-flex items-center gap-2 text-eh-petrol font-bold mb-4 uppercase tracking-wider text-xs bg-eh-green/20 px-3 py-1 rounded-full">
+                    <Microscope className="h-4 w-4" /> Science & Evidence Based
+                </div>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-eh-black mb-6">
+                    Percorsi clinici validati scientificamente
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                    easydoctor si fonda sui principi dell'<span className="font-bold text-eh-petrol">Evidence Based Medicine</span>. 
+                    I nostri protocolli e questionari (PROM/PREM) sono validati a livello internazionale per garantire la massima affidabilità nella misurazione degli esiti clinici nelle principali aree terapeutiche.
+                </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Neurologia */}
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <Brain className="h-7 w-7" />
+                    </div>
+                    <h3 className="text-xl font-bold text-eh-black mb-4">Neurologia</h3>
+                    <p className="text-sm text-gray-600 mb-6">
+                        Monitoraggio continuo dei sintomi neurologici e dell'impatto sulla qualità di vita.
+                    </p>
+                    <div className="space-y-2">
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Patologie Trattate</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Sclerosi Multipla</li>
+                            <li>• Malattia di Parkinson</li>
+                            <li>• Epilessia</li>
+                            <li>• Emicrania</li>
+                            <li>• Follow-up Post-Ictus</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Cardiologia */}
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="w-14 h-14 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                        <Heart className="h-7 w-7" />
+                    </div>
+                    <h3 className="text-xl font-bold text-eh-black mb-4">Cardiologia</h3>
+                    <p className="text-sm text-gray-600 mb-6">
+                        Gestione proattiva del rischio cardiovascolare e aderenza alle terapie.
+                    </p>
+                    <div className="space-y-2">
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Patologie Trattate</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Scompenso Cardiaco</li>
+                            <li>• Ipertensione Arteriosa</li>
+                            <li>• Cardiopatia Ischemica</li>
+                            <li>• Fibrillazione Atriale</li>
+                            <li>• Riabilitazione Cardiologica</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Oncologia */}
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="w-14 h-14 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <Stethoscope className="h-7 w-7" />
+                    </div>
+                    <h3 className="text-xl font-bold text-eh-black mb-4">Oncologia</h3>
+                    <p className="text-sm text-gray-600 mb-6">
+                        Rilevazione precoce delle tossicità e supporto al paziente durante i trattamenti.
+                    </p>
+                    <div className="space-y-2">
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Patologie Trattate</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Tumore al Seno</li>
+                            <li>• Tumore del Polmone</li>
+                            <li>• Tumori Gastrointestinali</li>
+                            <li>• Neoplasie Ematologiche</li>
+                            <li>• Gestione Effetti Collaterali</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Diabetologia */}
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="w-14 h-14 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <Droplet className="h-7 w-7" />
+                    </div>
+                    <h3 className="text-xl font-bold text-eh-black mb-4">Diabetologia</h3>
+                    <p className="text-sm text-gray-600 mb-6">
+                        Controllo metabolico e prevenzione delle complicanze a lungo termine.
+                    </p>
+                    <div className="space-y-2">
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Patologie Trattate</h4>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                            <li>• Diabete Mellito Tipo 1</li>
+                            <li>• Diabete Mellito Tipo 2</li>
+                            <li>• Diabete Gestazionale</li>
+                            <li>• Prevenzione Piede Diabetico</li>
+                            <li>• Sindrome Metabolica</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -243,4 +348,32 @@ const Easydoctor: React.FC = () => {
 
                 {/* Facilities */}
                 <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-eh-green transition-colors">
-                    <h3 className="text-xl font-bold text-eh-green mb-
+                    <h3 className="text-xl font-bold text-eh-green mb-4">Per le Strutture</h3>
+                    <ul className="space-y-3">
+                        <li className="flex gap-3 text-gray-300"><CheckCircle className="h-5 w-5 text-eh-green shrink-0"/> Riduzione costi operativi</li>
+                        <li className="flex gap-3 text-gray-300"><CheckCircle className="h-5 w-5 text-eh-green shrink-0"/> Certificazione ISO 9001</li>
+                        <li className="flex gap-3 text-gray-300"><CheckCircle className="h-5 w-5 text-eh-green shrink-0"/> Sicurezza e Privacy</li>
+                        <li className="flex gap-3 text-gray-300"><CheckCircle className="h-5 w-5 text-eh-green shrink-0"/> Scalabilità SaaS</li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="contatti" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+            <div className="bg-eh-blue rounded-3xl p-12 text-center">
+                <h2 className="text-3xl font-bold text-eh-black mb-6">Pronto a digitalizzare i tuoi percorsi di cura?</h2>
+                <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
+                    Unisciti alle strutture che hanno già scelto easydoctor per migliorare l'engagement dei pazienti e la qualità dei dati clinici.
+                </p>
+                <ContactForm />
+            </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Easydoctor;
