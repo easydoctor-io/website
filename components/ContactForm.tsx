@@ -23,12 +23,28 @@ const ContactForm: React.FC = () => {
     
     setIsLoading(true);
     
-    // Simulo invio
-    setTimeout(() => {
-        setIsLoading(false);
+    try {
+        const formBody = new FormData();
+        formBody.append('name', formData.name);
+        formBody.append('company', formData.company);
+        formBody.append('email', formData.email);
+        formBody.append('phone', formData.phone);
+        formBody.append('message', formData.message);
+
+        await fetch("https://script.google.com/macros/s/AKfycbxkHMUSNRi7oj1oJUdVC56UJv3UsjjadWokD2ahcOIj5qsir8wl0BDQ9kgCtX-DaRqZ/exec", {
+            method: 'POST',
+            body: formBody,
+            mode: 'no-cors'
+        });
+
         setIsSent(true);
         toast.success("Messaggio inviato con successo!");
-    }, 1500);
+    } catch (error) {
+        console.error("Errore durante l'invio:", error);
+        toast.error("Si è verificato un errore. Riprova più tardi.");
+    } finally {
+        setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -61,7 +77,7 @@ const ContactForm: React.FC = () => {
                     type="text" 
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all text-black"
                     placeholder="Mario Rossi"
                 />
             </div>
@@ -73,7 +89,7 @@ const ContactForm: React.FC = () => {
                     type="text" 
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all text-black"
                     placeholder="Ospedale / Clinica / Ente"
                 />
             </div>
@@ -88,7 +104,7 @@ const ContactForm: React.FC = () => {
                     type="email" 
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all text-black"
                     placeholder="mario.rossi@ospedale.it"
                 />
             </div>
@@ -99,7 +115,7 @@ const ContactForm: React.FC = () => {
                     type="tel" 
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all text-black"
                     placeholder="+39 333 ..."
                 />
             </div>
@@ -113,7 +129,7 @@ const ContactForm: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-eh-petrol focus:bg-white outline-none transition-all resize-none text-black"
                 placeholder="Descrivi brevemente le tue esigenze (es. Demo Easy Risk, Consulenza GDPR...)"
             ></textarea>
         </div>

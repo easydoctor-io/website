@@ -33,107 +33,120 @@ const ClinicalRisk: React.FC = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-eh-green/10 skew-x-12 transform origin-top-right"></div>
       </section>
 
+      {/* Normative Context Section */}
+      <section className="py-16 bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+                <h2 className="text-3xl font-bold text-eh-black mb-6">Il Contesto Normativo Italiano</h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                    La gestione del rischio clinico non è più solo una buona pratica organizzativa, ma un obbligo esplicito per tutte le strutture sanitarie.
+                </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6">
+                        <Gavel className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-eh-black mb-3">Legge 24/2017 (Gelli-Bianco)</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                        Qualifica la sicurezza delle cure come parte costitutiva del diritto alla salute e richiede l’attivazione di funzioni strutturate di prevenzione e gestione del rischio sanitario.
+                    </p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6">
+                        <BookOpen className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-eh-black mb-3">D.lgs. 502/1992 & L. 208/2015</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                        Inquadrano qualità, appropriatezza e governo clinico, definendo la necessità di sistemi informativi capaci di documentare in modo tracciabile il monitoraggio a livello aziendale.
+                    </p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6">
+                        <ClipboardCheck className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-eh-black mb-3">Raccomandazioni Ministeriali</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                        Le 19 raccomandazioni sugli eventi sentinella sono richiamate come riferimento operativo e giuridicamente rilevante per orientare i modelli organizzativi e la formazione.
+                    </p>
+                </div>
+            </div>
+        </div>
+      </section>
+
       {/* Main Features Grid (Software) */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-eh-black">Piattaforma Software Easy Risk</h2>
-            <p className="text-gray-500 mt-4">Gestione completa degli indicatori di sicurezza secondo le Raccomandazioni Ministeriali.</p>
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-eh-black mb-6">Easy Risk: La piattaforma di Risk Management</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+                Pensata per supportare direzioni sanitarie, uffici qualità e risk manager nella prevenzione degli eventi avversi e nel miglioramento continuo della sicurezza delle cure. Permette di raccogliere, analizzare e monitorare in modo strutturato segnalazioni, incidenti e feedback, trasformandoli in piani di miglioramento misurabili.
+            </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* 1. Incident Reporting */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <ShieldAlert className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Incident Reporting</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                    Rilevazione di eventi avversi, near miss ed eventi sentinella. Analisi dettagliata per reparto, tipologia, gravità e trend temporali per prevenire il ripetersi degli errori.
-                </p>
-            </div>
-
-            {/* 2. Cadute */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <Activity className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Prevenzione Cadute</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                    Monitoraggio indicatori specifici: numero eventi (con/senza danno), tassi per 1.000 giornate di degenza, analisi cause ricorrenti e tracciamento azioni correttive.
-                </p>
-            </div>
-
-            {/* 3. Farmaci */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <Syringe className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Rischio Farmacologico</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                    Gestione errori di prescrizione, trascrizione e somministrazione. Focus su farmaci LASA e terapie ad alto rischio, in linea con le Raccomandazioni ministeriali.
-                </p>
-            </div>
-
-            {/* 4. Sala Operatoria */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <Stethoscope className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Sicurezza Chirurgica</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                    Prevenzione eventi wrong site/patient/procedure. Monitoraggio aderenza checklist di sala operatoria e gestione eventi peri-operatori.
-                </p>
-            </div>
-
-            {/* 5. ICA */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <Microscope className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Infezioni (ICA)</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                    Tracciamento tassi di infezione correlate all'assistenza e germi sentinella. Audit su igiene mani, profilassi antibiotica e bundle di prevenzione.
-                </p>
-            </div>
-
-            {/* 6. Dispositivi & Tecnologie */}
+            {/* 1. Registro unico dei rischi */}
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
                 <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
                     <Database className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Tecnovigilanza</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Registro Unico dei Rischi</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                    Gestione incidenti da dispositivi medici. Monitoraggio cluster critici, ricezione FSCA/FSN e tracciamento azioni di ritiro o sostituzione.
+                    Centralizza tutti i rischi sanitari e organizzativi in un unico cruscotto. Ogni rischio è classificato per area, processo, probabilità, impatto e stato delle azioni, offrendo una fotografia aggiornata delle criticità prioritarie.
                 </p>
             </div>
-             {/* 7. Emovigilanza */}
-             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
+
+            {/* 2. Incident reporting strutturato */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
                 <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <AlertTriangle className="h-6 w-6" />
+                    <ShieldAlert className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Emovigilanza</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Incident Reporting Strutturato</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                   Analisi dei rischi legati al percorso trasfusionale: eventi avversi trasfusionali, quasi-eventi e non conformità nella catena del sangue.
+                    Segnalazione facilitata di near miss, eventi avversi, eventi sentinella, errori in terapia e cadute. Workflow definito (presa in carico, analisi, azioni correttive, chiusura) completamente tracciato e documentabile.
                 </p>
             </div>
-             {/* 8. Diagnostica */}
-             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
+
+            {/* 3. Rischi allineati */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
                 <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <FileWarning className="h-6 w-6" />
+                    <Activity className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Rischi Diagnostici</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Aree Prioritarie Ministeriali</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                   Tracciamento ritardi diagnostici, esami non eseguiti per errore organizzativo ed errori di refertazione rilevanti.
+                    Mappatura e monitoraggio delle tipologie di rischio delle raccomandazioni ministeriali: identificazione paziente, chirurgia, terapia farmacologica (LASA), rischio trasfusionale, ICA, cadute e gestione dispositivi medici.
                 </p>
             </div>
-             {/* 9. Sinistri */}
-             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
+
+            {/* 4. PARM */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
+                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+                    <FileSearch className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">PARM & Relazione Annuale</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                    Il Piano Annuale di Risk Management diventa un processo vivo. Raccolta strutturata di dati per definire priorità, monitorare le azioni e generare automaticamente la relazione annuale sul rischio clinico per la Direzione.
+                </p>
+            </div>
+
+            {/* 5. Integrazione feedback pazienti */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
+                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+                    <Users className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Integrazione Feedback Pazienti</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                    Raccoglie e valorizza reclami, segnalazioni formali e risultati delle indagini di soddisfazione. La voce del paziente diventa una fonte strutturata di informazioni sui rischi percepiti e sulle aree di miglioramento.
+                </p>
+            </div>
+            
+            {/* 6. Gestione Sinistri */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
                 <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
                     <Gavel className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Gestione Sinistri</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                   Dashboard contenzioso legale: analisi sinistri aperti/chiusi, tipologia evento, importi e lesson learned per la prevenzione futura.
+                   Dashboard contenzioso legale: analisi sinistri aperti/chiusi, tipologia evento, importi e lesson learned per la prevenzione futura, a supporto del governo clinico e legale.
                 </p>
             </div>
         </div>

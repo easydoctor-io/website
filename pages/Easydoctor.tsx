@@ -20,12 +20,12 @@ const Easydoctor: React.FC = () => {
                 Piattaforma SaaS Certificata ISO 9001
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
-                easydoctor
+                Digital Patient Engagement <br/> con <span className="text-eh-green">easydoctor</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Il sistema operativo per il <span className="text-eh-green font-bold">Digital Patient Engagement</span>.
+                Trasforma il paziente in un attore attivo del proprio percorso di cura.
                 <br/>
-                Semplifica la raccolta dati, ingaggia i pazienti e migliora gli esiti clinici.
+                Semplifica la raccolta dati (PROM/PREM), aumenta l'aderenza terapeutica e migliora gli esiti clinici attraverso un coinvolgimento continuo e personalizzato.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#contatti" className="bg-eh-green text-eh-petrol px-8 py-4 rounded-xl font-bold hover:bg-white transition-all shadow-lg shadow-eh-green/20">
