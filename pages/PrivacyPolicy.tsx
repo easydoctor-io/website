@@ -53,7 +53,7 @@ const PrivacyPolicy: React.FC = () => {
             <p>I Dati Personali sono utilizzati per adempiere a obblighi contrattuali, precontrattuali e normativi.</p>
 
             <h2 id="modalita">Modalità di trattamento</h2>
-            <p>Il trattamento avviene con strumenti informatici e/o telematici, nel rispetto di adeguate misure di sicurezza. Potrebbero accedervi soggetti interni o esterni nominati Responsabili del Trattamento. L’elenco aggiornato è disponibile scrivendo a <a href="mailto:fabio@easydoctor.io">fabio@easydoctor.io</a>.</p>
+            <p>Il trattamento avviene con strumenti informatici e/o telematici, nel rispetto di adeguate misure di sicurezza. Potrebbero accedervi soggetti interni o esterni nominati Responsabili del Trattamento. L’elenco aggiornato è disponibile scrivendo a <a href="mailto:info@easydoctor.io">info@easydoctor.io</a>.</p>
 
             <h2 id="base-giuridica">Base giuridica</h2>
             <p>Il trattamento si basa su:</p>
@@ -65,7 +65,7 @@ const PrivacyPolicy: React.FC = () => {
                 <li>legittimo interesse del Titolare o terzi;</li>
                 <li>interesse vitale.</li>
             </ul>
-            <p>Per chiarimenti è possibile scrivere a <a href="mailto:fabio@easydoctor.io">fabio@easydoctor.io</a>.</p>
+            <p>Per chiarimenti è possibile scrivere a <a href="mailto:info@easydoctor.io">info@easydoctor.io</a>.</p>
 
             <h2 id="luogo">Luogo</h2>
             <p>I Dati sono trattati presso la sede del Titolare e in altri luoghi in cui sono ubicati i soggetti coinvolti.</p>
@@ -121,7 +121,7 @@ const PrivacyPolicy: React.FC = () => {
                 <li>decisioni di adeguatezza da parte della Commissione UE;</li>
                 <li>misure supplementari di sicurezza e minimizzazione.</li>
             </ul>
-            <p>L'Utente può richiedere informazioni dettagliate sui trasferimenti internazionali dei dati scrivendo a: <a href="mailto:fabio@easydoctor.io">fabio@easydoctor.io</a>.</p>
+            <p>L'Utente può richiedere informazioni dettagliate sui trasferimenti internazionali dei dati scrivendo a: <a href="mailto:info@easydoctor.io">info@easydoctor.io</a>.</p>
 
             <h2 id="sub-responsabili">Sub-responsabili del trattamento (fornitori esterni)</h2>
             <p>Easy Health si avvale di fornitori terzi (sub-responsabili) che trattano i dati per conto del Titolare, per finalità connesse all'erogazione dei servizi digitali. Tra questi rientrano:</p>
@@ -187,7 +187,7 @@ const PrivacyPolicy: React.FC = () => {
                 <p className="mb-1">Via Arcivescovo Calabiana 6, 20139 Milano (MI)</p>
                 <p className="mb-1">P. IVA 11607630966</p>
                 <p className="mb-0">
-                    Email: <a href="mailto:fabio@easydoctor.io" className="font-bold">fabio@easydoctor.io</a><br/>
+                    Email: <a href="mailto:info@easydoctor.io" className="font-bold">info@easydoctor.io</a><br/>
                     PEC: easyhealth@pec.it
                 </p>
                 

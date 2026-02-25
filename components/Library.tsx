@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet-async';
 import { VERTICALS, INSTRUMENTS } from '../data/clinicalData';
 import { Instrument, VerticalType } from '../types';
 import { useGlobal } from '../context/GlobalContext';
+import { trackEvent } from '@/services/analytics';
 
 // Helper Icon Mapper
 const getIcon = (name: string) => {
@@ -93,7 +94,14 @@ const Library: React.FC = () => {
     
     // Direct simple mailto
     const body = `Salve Team Easy Health,%0D%0A%0D%0ASono interessato ai vostri strumenti digitali (es. ${selectedNames || 'dal catalogo'}).%0D%0A%0D%0ACordiali Saluti.`;
-    window.location.href = `mailto:fabio@easydoctor.io?subject=Richiesta Info da Catalogo Web&body=${body}`;
+    
+    // Track event via Measurement Protocol
+    trackEvent('generate_lead', {
+      item_name: selectedNames || 'generic_catalog',
+      method: 'mailto'
+    });
+
+    window.location.href = `mailto:info@easydoctor.io?subject=Richiesta Info da Catalogo Web&body=${body}`;
   };
 
   // Filter Logic
@@ -238,7 +246,7 @@ const Library: React.FC = () => {
                     placeholder="Cerca..." 
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-eh-blue/50 dark:bg-gray-800 border border-transparent rounded-xl focus:bg-white dark:focus:bg-gray-900 focus:ring-2 focus:ring-eh-petrol focus:border-transparent outline-none text-sm transition font-medium placeholder-gray-500 dark:text-white"
+                    className="w-full pl-10 pr-4 py-2.5 bg-eh-blue/50 dark:bg-gray-800 border border-transparent rounded-xl focus:bg-white dark:focus:bg-gray-900 focus:ring-2 focus:ring-eh-petrol focus:border-transparent outline-none text-sm transition font-medium placeholder-gray-500 text-gray-900 dark:text-white"
                     />
                 </div>
                 <button 

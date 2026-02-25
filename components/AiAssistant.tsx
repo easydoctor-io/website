@@ -121,7 +121,7 @@ const AiAssistant: React.FC = () => {
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Chiedi sugli strumenti clinici..."
-                className="w-full pl-4 pr-12 py-3 bg-gray-100 dark:bg-gray-900 border-none rounded-xl focus:ring-2 focus:ring-eh-petrol focus:bg-white dark:focus:bg-gray-800 dark:text-white transition-all text-sm"
+                className="w-full pl-4 pr-12 py-3 bg-gray-100 dark:bg-gray-900 border-none rounded-xl focus:ring-2 focus:ring-eh-petrol focus:bg-white dark:focus:bg-gray-800 text-gray-900 dark:text-white transition-all text-sm"
               />
               <button
                 onClick={handleSend}

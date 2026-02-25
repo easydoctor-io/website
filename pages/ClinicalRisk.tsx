@@ -5,7 +5,6 @@ import {
   Stethoscope, Database, BookOpen, Presentation, FileSearch
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ContactForm from '../components/ContactForm';
 
 const ClinicalRisk: React.FC = () => {
   return (
@@ -218,30 +217,7 @@ const ClinicalRisk: React.FC = () => {
          </div>
       </section>
 
-      {/* CTA Section with Form */}
-      <section id="contatti" className="bg-eh-blue py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-                <div>
-                    <h2 className="text-3xl font-extrabold text-eh-black mb-6">Metti in sicurezza i tuoi processi</h2>
-                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Compila il modulo per richiedere una demo della piattaforma <strong>Easy Risk</strong> o per parlare con i nostri consulenti esperti in gestione del rischio clinico.
-                    </p>
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-eh-petrol/20">
-                        <h4 className="font-bold text-eh-black mb-2">Perché sceglierci?</h4>
-                        <ul className="space-y-2">
-                             <li className="flex gap-2 text-sm text-gray-600"><div className="text-eh-petrol font-bold">✓</div> Soluzione completa Software + Consulenza</li>
-                             <li className="flex gap-2 text-sm text-gray-600"><div className="text-eh-petrol font-bold">✓</div> Conforme alle normative italiane</li>
-                             <li className="flex gap-2 text-sm text-gray-600"><div className="text-eh-petrol font-bold">✓</div> Integrazione nativa con i sistemi ospedalieri</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                {/* Contact Form */}
-                <ContactForm />
-            </div>
-        </div>
-      </section>
+      {/* CTA Section removed - now in Layout */}
     </div>
   );
 };
