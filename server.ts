@@ -230,8 +230,11 @@ async function startServer() {
   });
 
 
+  // Determine if we are in production
+  const isProduction = process.env.NODE_ENV === "production" || fs.existsSync(path.join(__dirname, "dist", "index.html"));
+
   // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
+  if (!isProduction) {
     const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -241,7 +244,7 @@ async function startServer() {
   } else {
     // Serve static files in production
     app.use(express.static(path.join(__dirname, "dist")));
-    app.get("*", (req, res) => {
+    app.get("/*", (req, res) => {
       res.sendFile(path.join(__dirname, "dist", "index.html"));
     });
   }
