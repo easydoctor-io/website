@@ -17,15 +17,12 @@ const ClinicalRisk = React.lazy(() => import('./pages/ClinicalRisk'));
 const SecurityConsulting = React.lazy(() => import('./pages/SecurityConsulting'));
 const Faq = React.lazy(() => import('./pages/Faq'));
 const Glossary = React.lazy(() => import('./pages/Glossary'));
-const BlogList = React.lazy(() => import('./pages/BlogList'));
-const BlogPost = React.lazy(() => import('./pages/BlogPost'));
+
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 const CookiePolicy = React.lazy(() => import('./pages/CookiePolicy'));
 
 // CMS Routes
-const CmsLogin = React.lazy(() => import('./pages/CmsLogin'));
-const CmsDashboard = React.lazy(() => import('./pages/CmsDashboard'));
-const CmsEditor = React.lazy(() => import('./pages/CmsEditor'));
+
 
 const LoadingFallback = () => (
   <div className="min-h-[50vh] flex items-center justify-center text-eh-petrol">
@@ -179,18 +176,14 @@ const App: React.FC = () => {
             <Route path="/clinical-risk" element={<ClinicalRisk />} />
             <Route path="/security-consulting" element={<SecurityConsulting />} />
             
-            <Route path="/blog" element={<BlogList />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
+
             <Route path="/faq" element={<Faq />} />
             <Route path="/glossario" element={<Glossary />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             
             {/* CMS Routes */}
-            <Route path="/cms/login" element={<CmsLogin />} />
-            <Route path="/cms/dashboard" element={<CmsDashboard />} />
-            <Route path="/cms/editor" element={<CmsEditor />} />
-            <Route path="/cms/editor/:id" element={<CmsEditor />} />
+
             
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
