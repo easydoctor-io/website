@@ -5,7 +5,6 @@ import {
   Brain, Heart, Stethoscope, Droplet, Microscope, BookOpen
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ContactForm from '../components/ContactForm';
 
 const Easydoctor: React.FC = () => {
   return (
@@ -360,18 +359,7 @@ const Easydoctor: React.FC = () => {
          </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="contatti" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-            <div className="bg-eh-blue rounded-3xl p-12 text-center">
-                <h2 className="text-3xl font-bold text-eh-black mb-6">Pronto a digitalizzare i tuoi percorsi di cura?</h2>
-                <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
-                    Unisciti alle strutture che hanno già scelto easydoctor per migliorare l'engagement dei pazienti e la qualità dei dati clinici.
-                </p>
-                <ContactForm />
-            </div>
-        </div>
-      </section>
+      {/* CTA Section removed - now in Layout */}
     </div>
   );
 };

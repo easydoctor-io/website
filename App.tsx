@@ -9,7 +9,6 @@ import {
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import CookieBanner from './components/CookieBanner';
-import ContactForm from './components/ContactForm';
 
 // Lazy Loaded Pages
 const About = React.lazy(() => import('./pages/About'));
@@ -40,7 +39,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Easy Health | Soluzioni Digitali per la Sanità</title>
-        <meta name="description" content="Easy Health offre soluzioni integrate per Digital Patient Engagement, Risk Management Clinico e Sicurezza dei Processi/Dati per strutture sanitarie pubbliche e private." />
+        <meta name="description" content="Easy Health offre soluzioni integrate per Digital Patient Engagement, Risk Management Sanitario e Sicurezza dei Processi/Dati per strutture sanitarie pubbliche e private." />
       </Helmet>
       <Hero />
 
@@ -161,34 +160,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section with Form */}
-      <section id="contatti" className="bg-white dark:bg-eh-darkSurface py-20 border-t border-gray-100 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 className="text-3xl font-extrabold text-eh-black dark:text-white mb-6">Parla con noi</h2>
-                    <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 leading-relaxed">
-                        Siamo pronti ad ascoltare le esigenze della tua struttura sanitaria. Compila il modulo per richiedere una demo o una consulenza specialistica.
-                    </p>
-                    <div className="space-y-6">
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-eh-blue dark:bg-gray-800 rounded-full flex items-center justify-center text-eh-petrol dark:text-eh-green shadow-sm">
-                                <Mail className="h-6 w-6" />
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-eh-black dark:text-white">Email</h4>
-                                <a href="mailto:fabio@easydoctor.io" className="text-gray-600 dark:text-gray-400 hover:text-eh-petrol">fabio@easydoctor.io</a>
-                            </div>
-                        </div>
-                        {/* Add Address or Phone if needed here */}
-                    </div>
-                </div>
-                
-                {/* Embed Form */}
-                <ContactForm />
-            </div>
-        </div>
-      </section>
+      {/* Contact Section removed - now in Layout */}
     </>
   );
 };

@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             Easy Health: partner per l'innovazione delle <span className="text-eh-petrol">strutture sanitarie</span>
           </h1>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Soluzioni integrate per il Digital Patient Engagement, il Risk Management Clinico e la Sicurezza dei Dati per organizzazioni pubbliche e private.
+            Soluzioni integrate per il Digital Patient Engagement, il Risk Management Sanitario e la Sicurezza dei Dati per organizzazioni pubbliche e private.
           </p>
           <p className="text-sm text-gray-500 font-medium mt-6">
             Startup innovativa certificata ISO 9001 | Disponibile su Consip e MePa
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
                 <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
                     <ShieldAlert className="h-7 w-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-red-600 transition-colors">Risk Management Clinico</h3>
+                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-red-600 transition-colors">Risk Management Sanitario</h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                     Piattaforma <strong>Easy Risk</strong>. Incident Reporting, monitoraggio cadute, infezioni e gestione sinistri.
                 </p>

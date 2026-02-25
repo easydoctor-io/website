@@ -1,6 +1,5 @@
 import React from 'react';
 import { Lock, ShieldCheck, Server, FileCode, CheckCircle, ArrowRight, AlertOctagon, FileText, Globe } from 'lucide-react';
-import ContactForm from '../components/ContactForm';
 
 const SecurityConsulting: React.FC = () => {
   return (
@@ -156,28 +155,7 @@ const SecurityConsulting: React.FC = () => {
           </div>
       </section>
 
-      {/* CTA Section with Form */}
-      <section id="contatti" className="bg-eh-blue py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-                <div>
-                    <h2 className="text-3xl font-extrabold text-eh-black mb-6">Proteggi la tua struttura oggi</h2>
-                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Non aspettare il prossimo incidente o ispezione. Compila il modulo per un <strong>assessment preliminare gratuito</strong> della sicurezza dei tuoi processi o per richiedere informazioni sui nostri servizi di consulenza.
-                    </p>
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-eh-petrol/10">
-                         <h4 className="font-bold text-eh-black mb-2">Perché Easy Health?</h4>
-                         <p className="text-sm text-gray-600 mb-0">
-                             Siamo verticali sulla Sanità Digitale. Conosciamo i processi clinici, non solo quelli informatici. Questo fa la differenza tra una conformità "di carta" e una sicurezza reale.
-                         </p>
-                    </div>
-                </div>
-                
-                {/* Contact Form */}
-                <ContactForm />
-            </div>
-        </div>
-      </section>
+      {/* CTA Section removed - now in Layout */}
     </div>
   );
 };
