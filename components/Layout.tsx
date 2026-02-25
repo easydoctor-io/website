@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, Sun, Moon, ChevronDown, Mail } from 'lucide-react';
+import { Menu, X, ArrowRight, Sun, Moon, ChevronDown } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 import Breadcrumbs from './Breadcrumbs';
 import { useGlobal } from '../context/GlobalContext';
-import ContactForm from './ContactForm';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -155,45 +154,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
 
-      {/* Global Contact Form - Hidden on CMS routes */}
-      {!location.pathname.startsWith('/cms') && (
-        <section id="contatti" className="bg-eh-blue dark:bg-eh-darkSurface py-20 border-t border-gray-100 dark:border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Left Side: CTA */}
-              <div>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-eh-black dark:text-white mb-6">
-                  Parla con noi
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 leading-relaxed">
-                  Siamo pronti ad ascoltare le esigenze della tua struttura sanitaria. 
-                  Compila il modulo per richiedere una demo o una consulenza specialistica.
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center text-eh-petrol dark:text-eh-green shadow-sm border border-gray-100 dark:border-gray-700">
-                      <Mail className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-eh-black dark:text-white">Email</h4>
-                      <a href="mailto:info@easydoctor.io" className="text-gray-600 dark:text-gray-400 hover:text-eh-petrol transition-colors">
-                        info@easydoctor.io
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side: Form */}
-              <div className="w-full">
-                <ContactForm />
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       <footer className="bg-eh-black dark:bg-black text-white py-12 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -223,7 +183,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <li>20139 Milano (MI)</li>
                         <li>P.IVA: 11607630966</li>
                         <li className="pt-2">
-                           <a href="mailto:info@easydoctor.io" className="text-eh-green hover:underline block">info@easydoctor.io</a>
+                           <a href="mailto:fabio@easydoctor.io" className="text-eh-green hover:underline block">fabio@easydoctor.io</a>
                            <span className="text-gray-500 text-xs">PEC: easyhealth@pec.it</span>
                         </li>
                      </ul>

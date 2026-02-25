@@ -1,4 +1,5 @@
 import express from "express";
+import { createServer as createViteServer } from "vite";
 import multer from "multer";
 import { v4 as uuidv4 } from "uuid";
 import cors from "cors";
@@ -46,50 +47,8 @@ async function startServer() {
   app.use("/uploads", express.static(path.join(__dirname, "uploads")));
   app.use("/audio", express.static(path.join(__dirname, "audio")));
 
-  // GA4 Measurement Protocol Helper
-  const trackGA4Event = async (clientId: string, eventName: string, params: object = {}) => {
-    const measurementId = process.env.GA4_MEASUREMENT_ID || 'G-JGPZWLZKFC';
-    const apiSecret = process.env.GA4_API_SECRET;
-
-    if (!apiSecret) {
-      console.warn("GA4_API_SECRET non configurata. Salto tracciamento server-side.");
-      return;
-    }
-
-    const url = `https://www.google-analytics.com/mp/collect?measurement_id=${measurementId}&api_secret=${apiSecret}`;
-
-    try {
-      await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify({
-          client_id: clientId,
-          events: [{
-            name: eventName,
-            params: {
-              ...params,
-              engagement_time_msec: "100",
-            },
-          }],
-        }),
-      });
-      console.log(`Evento GA4 inviato: ${eventName}`);
-    } catch (error) {
-      console.error('Errore invio evento GA4:', error);
-    }
-  };
-
   // API Routes
   
-  // GA4 Tracking Proxy
-  app.post("/api/track", async (req, res) => {
-    const { clientId, eventName, params } = req.body;
-    if (!clientId || !eventName) {
-      return res.status(400).json({ error: "clientId e eventName sono obbligatori" });
-    }
-    await trackGA4Event(clientId, eventName, params);
-    res.json({ success: true });
-  });
-
   // Auth: Verify Invite Token
   app.post("/api/auth/verify-invite", (req, res) => {
     const { token } = req.body;
@@ -230,12 +189,8 @@ async function startServer() {
   });
 
 
-  // Determine if we are in production
-  const isProduction = process.env.NODE_ENV === "production" || fs.existsSync(path.join(__dirname, "dist", "index.html"));
-
   // Vite middleware for development
-  if (!isProduction) {
-    const { createServer: createViteServer } = await import("vite");
+  if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -244,7 +199,7 @@ async function startServer() {
   } else {
     // Serve static files in production
     app.use(express.static(path.join(__dirname, "dist")));
-    app.get("/*", (req, res) => {
+    app.get("*", (req, res) => {
       res.sendFile(path.join(__dirname, "dist", "index.html"));
     });
   }

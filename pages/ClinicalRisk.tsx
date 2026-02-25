@@ -5,6 +5,7 @@ import {
   Stethoscope, Database, BookOpen, Presentation, FileSearch
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ContactForm from '../components/ContactForm';
 
 const ClinicalRisk: React.FC = () => {
   return (
@@ -121,31 +122,31 @@ const ClinicalRisk: React.FC = () => {
                 <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
                     <FileSearch className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Piano Annuale (PARM)</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">PARM & Relazione Annuale</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                    Il Piano Annuale di Risk Management diventa un processo vivo. Raccolta strutturata di dati per definire priorità e monitorare le azioni di prevenzione e mitigazione del rischio.
+                    Il Piano Annuale di Risk Management diventa un processo vivo. Raccolta strutturata di dati per definire priorità, monitorare le azioni e generare automaticamente la relazione annuale sul rischio clinico per la Direzione.
                 </p>
             </div>
 
-            {/* 5. Relazione Annuale */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
-                    <ClipboardCheck className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Relazione Annuale</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                    Generazione automatica della relazione annuale sul rischio clinico per la Direzione, aggregando tutti i dati raccolti durante l'anno per una rendicontazione chiara e conforme alla normativa.
-                </p>
-            </div>
-
-            {/* 6. Feedback Pazienti & Gestione Sinistri */}
+            {/* 5. Integrazione feedback pazienti */}
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
                 <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
                     <Users className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Feedback Pazienti & Gestione Sinistri</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Integrazione Feedback Pazienti</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                    Raccoglie e valorizza reclami e indagini di soddisfazione, integrandoli con la dashboard del contenzioso legale. Un'analisi completa da sinistri aperti/chiusi fino alla voce del paziente per la prevenzione futura.
+                    Raccoglie e valorizza reclami, segnalazioni formali e risultati delle indagini di soddisfazione. La voce del paziente diventa una fonte strutturata di informazioni sui rischi percepiti e sulle aree di miglioramento.
+                </p>
+            </div>
+            
+            {/* 6. Gestione Sinistri */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
+                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+                    <Gavel className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Gestione Sinistri</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                   Dashboard contenzioso legale: analisi sinistri aperti/chiusi, tipologia evento, importi e lesson learned per la prevenzione futura, a supporto del governo clinico e legale.
                 </p>
             </div>
         </div>
@@ -217,7 +218,30 @@ const ClinicalRisk: React.FC = () => {
          </div>
       </section>
 
-      {/* CTA Section removed - now in Layout */}
+      {/* CTA Section with Form */}
+      <section id="contatti" className="bg-eh-blue py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 className="text-3xl font-extrabold text-eh-black mb-6">Metti in sicurezza i tuoi processi</h2>
+                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Compila il modulo per richiedere una demo della piattaforma <strong>Easy Risk</strong> o per parlare con i nostri consulenti esperti in gestione del rischio clinico.
+                    </p>
+                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-eh-petrol/20">
+                        <h4 className="font-bold text-eh-black mb-2">Perché sceglierci?</h4>
+                        <ul className="space-y-2">
+                             <li className="flex gap-2 text-sm text-gray-600"><div className="text-eh-petrol font-bold">✓</div> Soluzione completa Software + Consulenza</li>
+                             <li className="flex gap-2 text-sm text-gray-600"><div className="text-eh-petrol font-bold">✓</div> Conforme alle normative italiane</li>
+                             <li className="flex gap-2 text-sm text-gray-600"><div className="text-eh-petrol font-bold">✓</div> Integrazione nativa con i sistemi ospedalieri</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                {/* Contact Form */}
+                <ContactForm />
+            </div>
+        </div>
+      </section>
     </div>
   );
 };

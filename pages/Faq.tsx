@@ -62,7 +62,7 @@ const Faq: React.FC = () => {
                 <div className="mt-16 bg-eh-blue p-8 rounded-2xl text-center">
                     <h3 className="text-xl font-bold text-eh-black mb-2">Hai altre domande?</h3>
                     <p className="text-gray-600 mb-6">Il nostro team è pronto a rispondere alle tue esigenze specifiche.</p>
-                    <a href="mailto:info@easydoctor.io" className="inline-block bg-eh-petrol text-white px-6 py-3 rounded-xl font-bold hover:bg-eh-green hover:text-eh-petrol transition-colors">
+                    <a href="mailto:fabio@easydoctor.io" className="inline-block bg-eh-petrol text-white px-6 py-3 rounded-xl font-bold hover:bg-eh-green hover:text-eh-petrol transition-colors">
                         Scrivici una email
                     </a>
                 </div>
