@@ -1,37 +1,23 @@
-import express from "express";
-import { createServer as createViteServer } from "vite";
-
-import cors from "cors";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import { GoogleGenAI, Modality } from "@google/genai";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// In-memory database
-const db = {
-  news: [
+export const newsData = [
     {
       id: "case-study-diabete-online-asst-crema",
       title: "Case Study: Diabete Online con ASST di Crema",
       content: `
-        <p><strong>Il progetto Diabete Online rappresenta una pietra miliare nel decentramento della cura diabetologica, portando il monitoraggio specialistico direttamente sul territorio dell'ASST di Crema.</strong></p>
+        <p><strong>Un progetto innovativo che coinvolge i pazienti diabetici su tutto il territorio dell'ASST di Crema, con l'obiettivo di migliorare il monitoraggio e la raccolta di dati clinici fondamentali.</strong></p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">La Sfida del Diabete sul Territorio</h2>
-        <p>La gestione del diabete richiede un monitoraggio costante e un'educazione continua del paziente. Spesso, il modello tradizionale basato su visite ambulatoriali periodiche non riesce a intercettare tempestivamente le variazioni glicemiche o le difficoltà nell'aderenza terapeutica, portando a complicanze evitabili.</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">L'Obiettivo del Progetto</h2>
+        <p>Il progetto "Diabete Online" nasce dalla necessità di garantire una continuità assistenziale efficace per i pazienti affetti da diabete, superando i limiti delle visite sporadiche in presenza. Attraverso la piattaforma easydoctor, l'ASST di Crema ha implementato un sistema di monitoraggio remoto che permette di raccogliere informazioni costanti sullo stato di salute del paziente.</p>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">L'Architettura di Diabete Online</h2>
-        <p>Attraverso la piattaforma Easy Health, è stato costruito un ecosistema che permette:</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Digital Patient Engagement sul Territorio</h2>
+        <p>Coinvolgendo i pazienti direttamente nel proprio domicilio, il progetto mira a:</p>
         <ul>
-          <li><strong>Monitoraggio Remoto Strutturato</strong>: I pazienti caricano regolarmente i propri parametri (glicemia, peso, pressione) tramite un'interfaccia semplificata.</li>
-          <li><strong>Educazione Terapeutica Digitale</strong>: Invio di pillole informative su alimentazione e attività fisica, personalizzate in base al profilo del paziente.</li>
-          <li><strong>Comunicazione Ospedale-Territorio</strong>: I medici di medicina generale e gli specialisti diabetologi possono accedere a una dashboard condivisa per valutare l'andamento clinico senza attendere la visita fisica.</li>
+          <li>Raccogliere dati in tempo reale su parametri glicemici e stile di vita.</li>
+          <li>Migliorare l'aderenza terapeutica attraverso alert e promemoria personalizzati.</li>
+          <li>Fornire al team medico una visione d'insieme più accurata, permettendo interventi tempestivi in caso di anomalie.</li>
         </ul>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Obiettivi e Valore Generato</h2>
-        <p>L'obiettivo primario è la riduzione delle ospedalizzazioni per scompensi glicemici e il miglioramento del controllo metabolico (HbA1c). Il progetto mira a trasformare il paziente da soggetto passivo a protagonista consapevole della propria salute, riducendo al contempo il carico amministrativo per la struttura sanitaria.</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Risultati e Impatto</h2>
+        <p>L'adozione di questo modello ha permesso di rafforzare il legame medico-paziente, rendendo il paziente più consapevole e attivo nella gestione della propria patologia cronica, con un impatto positivo sulla qualità della vita e sulla sostenibilità del servizio sanitario territoriale.</p>
       `,
       tags: ["Case Studies", "Diabete", "ASST Crema"],
       coverImage: null,
@@ -42,50 +28,43 @@ const db = {
       id: "case-study-oncocare-asst-crema",
       title: "Case Study: OncoCare per il tumore della mammella e della prostata",
       content: `
-        <p><strong>Il progetto OncoCare integra il percorso clinico dei pazienti oncologici affetti da tumore della mammella e da tumore della prostata con strumenti digitali di follow-up strutturato, permettendo una comunicazione continua tra ospedale, territorio e paziente.</strong></p>
+        <p><strong>Implementazione di percorsi di Digital Patient Engagement per il monitoraggio dei pazienti oncologici presso l'ASST di Crema.</strong></p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Le Sfide del Paziente Oncologico</h2>
-        <p>I pazienti oncologici presentano frequentemente sintomatologie complesse che richiedono un'attenzione costante:</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Il Percorso OncoCare</h2>
+        <p>Il progetto OncoCare si focalizza su due delle patologie oncologiche più diffuse: il tumore della mammella e il tumore della prostata. L'obiettivo è supportare il paziente durante l'intero iter terapeutico, dalla diagnosi al follow-up.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Monitoraggio e Supporto</h2>
+        <p>Attraverso la piattaforma, i pazienti possono:</p>
         <ul>
-          <li><strong>Sintomi fisici</strong>: Dolore, fatigue e disturbi funzionali legati ai trattamenti.</li>
-          <li><strong>Impatto psicologico</strong>: Ansia, depressione e la costante paura di recidiva.</li>
-          <li><strong>Frammentazione assistenziale</strong>: Difficoltà nel mantenere la continuità tra le dimissioni ospedaliere e il ritorno sul territorio.</li>
+          <li>Segnalare tempestivamente eventuali effetti collaterali delle terapie (PROMs).</li>
+          <li>Accedere a risorse educative specifiche per la propria condizione.</li>
+          <li>Mantenere un canale di comunicazione aperto e sicuro con l'equipe oncologica.</li>
         </ul>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Il Modello Operativo OncoCare</h2>
-        <p>Il progetto non rientra nelle attività di telemonitoraggio sanitario tradizionale, ma si configura come un <strong>follow-up strutturato</strong> che prevede:</p>
-        <ul>
-          <li><strong>Valutazioni Ibride</strong>: Alternanza tra visite cliniche in presenza (ai tempi T0, T3, T6) e monitoraggio digitale intermedio.</li>
-          <li><strong>Questionari Validati</strong>: Utilizzo di strumenti standardizzati per la raccolta di PROMs (Patient-Reported Outcome Measures) per valutare la qualità della vita e la tossicità dei farmaci.</li>
-          <li><strong>Supporto Multidisciplinare</strong>: Integrazione di supporto psicologico e funzionale direttamente tramite la piattaforma.</li>
-          <li><strong>Analisi Predittiva</strong>: Utilizzo sperimentale dell'AI per identificare trend di peggioramento, fornendo alert non clinicamente vincolanti ma utili come supporto decisionale per il medico.</li>
-        </ul>
-
-        <h2 class="text-2xl font-bold mt-8 mb-4">Collaborazione Integrata</h2>
-        <p>La piattaforma Easy Health facilita il coinvolgimento coordinato di oncologi, psicologi, infermieri e medici di base, definendo ruoli e responsabilità chiari per rendere il percorso pienamente funzionale nel contesto organizzativo dell'ASST Crema.</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Valore per la Struttura</h2>
+        <p>Per l'ASST di Crema, OncoCare rappresenta uno strumento fondamentale per ottimizzare la gestione dei pazienti, riducendo gli accessi impropri in ospedale e garantendo che le risorse siano concentrate sui casi che richiedono attenzione immediata, migliorando complessivamente l'efficienza del reparto di oncologia.</p>
       `,
       tags: ["Case Studies", "Oncologia", "ASST Crema"],
       coverImage: null,
-      authorName: "Fabio Vantaggiato",
+      authorName: "Alberto Giacobone",
       createdAt: new Date("2024-10-20").toISOString()
     },
     {
       id: "case-study-neurocare-asst-crema",
       title: "Case Study: NeuroCare e la gestione delle patologie neurologiche complesse",
       content: `
-        <p><strong>NeuroCare è l'ecosistema digitale sviluppato per il reparto di Neurologia dell'ASST di Crema, progettato per gestire l'estrema complessità e varietà delle patologie neurologiche.</strong></p>
+        <p><strong>Un ecosistema digitale dedicato al reparto di Neurologia dell'ASST di Crema per il follow-up di patologie croniche e acute.</strong></p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Patologie e Protocolli Specifici</h2>
-        <p>Il progetto "esplode" la gestione clinica su diverse linee di intervento, ognuna con questionari e alert dedicati:</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Multidisciplinarietà e Tecnologia</h2>
+        <p>NeuroCare è stato progettato per rispondere alle esigenze eterogenee del reparto di Neurologia, seguendo pazienti affetti da diverse patologie, tra cui:</p>
         <ul>
-          <li><strong>ICTUS e TIA</strong>: Focus sulla prevenzione secondaria e sul monitoraggio dei fattori di rischio vascolare post-evento acuto.</li>
-          <li><strong>Parkinson</strong>: Monitoraggio delle fluttuazioni motorie e dell'efficacia della terapia farmacologica nel tempo.</li>
-          <li><strong>Sclerosi Multipla (SM)</strong>: Valutazione della fatigue e dell'impatto della patologia sulle attività quotidiane, con supporto alla gestione dei farmaci biologici.</li>
-          <li><strong>Cefalee ed Emicrania</strong>: Un vero e proprio "diario delle crisi" digitale che permette di mappare frequenza, intensità e trigger degli attacchi, ottimizzando la scelta terapeutica.</li>
+          <li><strong>ICTUS e TIA</strong>: Monitoraggio post-acuto e prevenzione secondaria.</li>
+          <li><strong>Parkinson e Sclerosi Multipla (SM)</strong>: Gestione della cronicità e monitoraggio della progressione dei sintomi.</li>
+          <li><strong>Cefalee ed Emicrania</strong>: Diario digitale per l'identificazione dei trigger e la valutazione dell'efficacia terapeutica.</li>
         </ul>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Obiettivi Clinici e Organizzativi</h2>
-        <p>L'obiettivo è duplice: da un lato, fornire al neurologo dati oggettivi raccolti "nella vita reale" del paziente (fuori dall'ambulatorio); dall'altro, ridurre il senso di abbandono che spesso colpisce i pazienti con patologie croniche neurodegenerative, garantendo un filo diretto con la struttura di riferimento.</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Personalizzazione del Percorso</h2>
+        <p>Ogni patologia dispone di protocolli di ingaggio specifici, permettendo ai medici di ricevere dati mirati e ai pazienti di sentirsi costantemente seguiti, riducendo il senso di isolamento tipico di molte condizioni neurologiche.</p>
       `,
       tags: ["Case Studies", "Neurologia", "ASST Crema"],
       coverImage: null,
@@ -96,32 +75,32 @@ const db = {
       id: "case-study-prevenzione-cardiovascolare-monzino",
       title: "Case Study: Prevenzione Cardiovascolare con il Centro Cardiologico Monzino",
       content: `
-        <p><strong>In collaborazione con il Centro Cardiologico Monzino, Easy Health ha sviluppato un programma di prevenzione cardiovascolare avanzato che sfrutta il Digital Patient Engagement per ridurre l'incidenza di eventi acuti.</strong></p>
+        <p><strong>Collaborazione con un'eccellenza della cardiologia italiana per promuovere la prevenzione primaria e secondaria attraverso il digitale.</strong></p>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Dalla Cura alla Prevenzione Proattiva</h2>
-        <p>La cardiologia moderna si sta spostando sempre più verso la prevenzione. Il progetto con il Monzino si focalizza sulla stratificazione del rischio cardiovascolare attraverso la raccolta sistematica di dati anamnestici e biometrici.</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">L'Approccio Preventivo</h2>
+        <p>Il progetto realizzato con il Centro Cardiologico Monzino mira a identificare e monitorare i fattori di rischio cardiovascolare in una popolazione selezionata, utilizzando strumenti di Digital Patient Engagement per promuovere stili di vita sani.</p>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Il Percorso Digitale</h2>
-        <p>Il progetto prevede un'interazione costante con il paziente:</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Strumenti e Metodologia</h2>
+        <p>La piattaforma easydoctor viene utilizzata per:</p>
         <ul>
-          <li><strong>Screening Digitale</strong>: Questionari iniziali per identificare soggetti a rischio (ipertensione, ipercolesterolemia, familiarità).</li>
-          <li><strong>Nudging Comportamentale</strong>: Invio di contenuti educativi e "spinte gentili" per promuovere la cessazione del fumo, una dieta equilibrata e l'attività fisica regolare.</li>
-          <li><strong>Monitoraggio dei Parametri</strong>: Integrazione di dati provenienti da dispositivi wearable o inserimento manuale di pressione e frequenza cardiaca.</li>
+          <li>Screening iniziali e stratificazione del rischio.</li>
+          <li>Programmi di educazione sanitaria personalizzati.</li>
+          <li>Monitoraggio dei parametri vitali e dell'aderenza ai consigli medici.</li>
         </ul>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Un Modello di Eccellenza</h2>
-        <p>Questo case study rappresenta un modello di come un IRCCS di eccellenza possa estendere la propria capacità di cura oltre le mura dell'ospedale, creando una rete di prevenzione capillare ed efficace grazie alle tecnologie di Digital Patient Engagement.</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Innovazione in Cardiologia</h2>
+        <p>Questo case study dimostra come la tecnologia possa essere un alleato prezioso nella prevenzione, permettendo di intercettare precocemente potenziali problematiche e riducendo l'incidenza di eventi cardiovascolari gravi attraverso un coinvolgimento costante e proattivo del paziente.</p>
       `,
       tags: ["Case Studies", "Cardiologia", "Monzino"],
       coverImage: null,
-      authorName: "Fabio Vantaggiato",
+      authorName: "Alberto Giacobone",
       createdAt: new Date("2024-08-05").toISOString()
     },
     {
       id: "sostenibilita-sanita-vbhc-dpe",
       title: "Sostenibilità della sanità: il modello Value-Based Healthcare ed il Digital Patient Engagement",
       content: `
-        <p><strong>${"Alla scoperta del modello Value-Based Healthcare e del suo impatto sulla sostenibilità della sanità: in occasione del 45° anniversario del Servizio Sanitario Nazionale, raccontiamo come il VBHC e il Digital Patient Engagement stiano ridefinendo l’approccio alla cura e al benessere dei pazienti."}</strong></p>
+        <p><strong>Alla scoperta del modello Value-Based Healthcare e del suo impatto sulla sostenibilità della sanità: in occasione del 45° anniversario del Servizio Sanitario Nazionale, raccontiamo come il VBHC e il Digital Patient Engagement stiano ridefinendo l’approccio alla cura e al benessere dei pazienti.</strong></p>
         
         <p>Nel 2023 si è celebrato il traguardo dei 45 anni trascorsi da quel 1978 in cui, con la Legge 833 del 23 dicembre 1978 firmata da Tina Anselmi, la prima ministra di sesso femminile della nostra Repubblica, è stato istituito il Servizio Sanitario Nazionale, una vera e propria avanguardia nel panorama internazionale.</p>
         <p>I suoi principi cardine di universalità, equità e solidarietà di accesso alla cura e alla riabilitazione hanno fatto da traccia per lo sviluppo del nostro sistema sanitario portandolo ad essere a lungo un’eccellenza mondiale in più di una classifica, anche se negli ultimi anni è sceso di qualche posizione.</p>
@@ -363,55 +342,4 @@ const db = {
       authorName: "Fabio Vantaggiato",
       createdAt: new Date("2025-05-19").toISOString()
     }
-  ]
-};
-
-async function startServer() {
-  const app = express();
-  const PORT = Number(process.env.PORT) || 3000;
-
-  app.use(cors());
-  app.use(express.json());
-
-  // API Routes
-  app.get("/api/news", (req, res) => {
-    res.json(db.news);
-  });
-
-  app.get("/api/news/:id", (req, res) => {
-    const item = db.news.find(n => n.id === req.params.id);
-    if (item) {
-      res.json(item);
-    } else {
-      res.status(404).json({ message: "Notizia non trovata" });
-    }
-  });
-
-
-
-  // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-    });
-    app.use(vite.middlewares);
-  } else {
-    // Serve static files in production
-    app.use(express.static(path.join(__dirname, "dist")));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "dist", "index.html"));
-    });
-  }
-
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
-}
-
-try {
-  startServer();
-} catch (error) {
-  console.error("Failed to start server:", error);
-  process.exit(1); // Exit with a non-zero code to indicate failure
-}
+];

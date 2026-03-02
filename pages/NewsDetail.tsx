@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Calendar, User, ArrowLeft, Tag, Share2, Loader2, MessageSquare, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { newsData } from '../data/news';
 
 interface NewsItem {
   id: string;
@@ -22,12 +23,11 @@ const NewsDetail: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchNewsDetail = async () => {
+    const fetchNewsDetail = () => {
       try {
-        const response = await fetch(`/api/news/${id}`);
-        if (response.ok) {
-          const data = await response.json();
-          setNews(data);
+        const item = newsData.find(n => n.id === id);
+        if (item) {
+          setNews(item);
         } else {
           setError('Notizia non trovata');
         }

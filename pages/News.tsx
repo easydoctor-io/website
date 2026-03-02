@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Calendar, User, ArrowRight, Search, Tag, Loader2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { newsData } from '../data/news';
 
 interface NewsItem {
   id: string;
@@ -18,8 +19,8 @@ const News: React.FC = () => {
   const [searchParams] = useSearchParams();
   const initialTag = searchParams.get('tag');
   
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [news, setNews] = useState<NewsItem[]>(newsData);
+  const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(initialTag);
 
@@ -28,24 +29,6 @@ const News: React.FC = () => {
       setSelectedTag(initialTag);
     }
   }, [initialTag]);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await fetch('/api/news');
-        if (response.ok) {
-          const data = await response.json();
-          setNews(data);
-        }
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, []);
 
   const allTags = Array.from(new Set(news.flatMap(item => item.tags)));
 
