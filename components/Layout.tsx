@@ -60,6 +60,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <div className="font-bold text-gray-800 dark:text-white">Sicurezza & Dati</div>
                             <div className="text-xs text-gray-500">Consulting & Compliance</div>
                         </Link>
+                        <Link to="/notizie?tag=Case Studies" className="block px-4 py-3 rounded-lg hover:bg-eh-blue dark:hover:bg-gray-700 text-sm border-t border-gray-100 dark:border-gray-800 mt-1">
+                            <div className="font-bold text-eh-petrol dark:text-eh-green">Case Studies</div>
+                            <div className="text-xs text-gray-500">I nostri progetti di successo</div>
+                        </Link>
                     </div>
                 </div>
                 
@@ -67,7 +71,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   Chi siamo
                 </Link>
 
-                <Link to="/blog" className={`text-sm transition-colors ${isActive('/blog')}`}>
+                <Link to="/notizie" className={`text-sm transition-colors ${isActive('/notizie')}`}>
                   Notizie
                 </Link>
 
@@ -129,12 +133,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                           <Link to="/easydoctor" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 font-bold border-l-2 border-eh-petrol">easydoctor (DPE)</Link>
                           <Link to="/clinical-risk" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 font-bold border-l-2 border-red-500">Easy Risk</Link>
                           <Link to="/security-consulting" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 font-bold border-l-2 border-gray-500">Sicurezza & Dati</Link>
+                          <Link to="/notizie?tag=Case Studies" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-sm text-eh-petrol dark:text-eh-green font-bold border-l-2 border-eh-green bg-eh-green/5">Case Studies</Link>
                       </div>
                   )}
               </div>
 
               <Link to="/chi-siamo" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-eh-black dark:text-gray-200 hover:bg-eh-blue hover:text-eh-petrol dark:hover:bg-gray-700">Chi Siamo</Link>
-              <Link to="/blog" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-eh-black dark:text-gray-200 hover:bg-eh-blue hover:text-eh-petrol dark:hover:bg-gray-700">Notizie</Link>
+              <Link to="/notizie" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-eh-black dark:text-gray-200 hover:bg-eh-blue hover:text-eh-petrol dark:hover:bg-gray-700">Notizie</Link>
               
               <div className="border-t border-gray-100 dark:border-gray-700 my-2 pt-2">
                  <Link to="/faq" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-sm text-gray-500 dark:text-gray-400 hover:text-eh-petrol dark:hover:text-eh-green">FAQ</Link>
@@ -213,6 +218,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <li><Link to="/easydoctor" className="hover:text-eh-green transition-colors">Digital Patient Engagement</Link></li>
                         <li><Link to="/clinical-risk" className="hover:text-eh-green transition-colors">Clinical Risk Management</Link></li>
                         <li><Link to="/security-consulting" className="hover:text-eh-green transition-colors">Sicurezza & Compliance</Link></li>
+                        <li><Link to="/notizie?tag=Case Studies" className="hover:text-eh-green transition-colors font-bold text-eh-green">Case Studies</Link></li>
+                        <li><Link to="/glossario" className="hover:text-eh-green transition-colors">Glossario</Link></li>
                     </ul>
                 </div>
                 <div>

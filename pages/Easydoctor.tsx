@@ -1,12 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Cloud, Lock, CheckCircle, ArrowRight, Layout, Database, Activity, 
   Smartphone, BarChart3, Users, Calendar, Bell, ChevronRight, Settings,
-  Brain, Heart, Stethoscope, Droplet, Microscope, BookOpen
+  Brain, Heart, Stethoscope, Droplet, Microscope, BookOpen, HelpCircle,
+  Plus, Minus
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'motion/react';
+
+const FAQ_ITEMS = [
+  {
+    question: "Cos’è easydoctor e come può migliorare la comunicazione medico-paziente?",
+    answer: "easydoctor è una piattaforma SaaS di Digital Patient Engagement che facilita il dialogo continuo tra medico e paziente. Attraverso strumenti digitali intuitivi, permette di raccogliere dati in tempo reale, monitorare l'aderenza terapeutica e fornire contenuti educativi personalizzati, rendendo la comunicazione più fluida, tempestiva ed efficace."
+  },
+  {
+    question: "Quali tipi di strutture sanitarie possono beneficiare al meglio di easydoctor?",
+    answer: "La piattaforma è progettata per ospedali, cliniche specialistiche, centri diagnostici e studi medici associati. Grazie alla sua scalabilità SaaS, si adatta sia a grandi strutture pubbliche che a realtà private che desiderano ottimizzare i percorsi di cura e la gestione dei pazienti cronici o in post-operatorio."
+  },
+  {
+    question: "Come Easy Health garantisce la protezione dei dati dei pazienti?",
+    answer: "La sicurezza è al centro del nostro operato. Easy Health è certificata ISO 9001 e adotta protocolli rigorosi in conformità al GDPR. I dati sono criptati, ospitati su infrastrutture cloud sicure e l'accesso è regolato da permessi granulari per garantire che solo il personale autorizzato possa visualizzare le informazioni sensibili."
+  },
+  {
+    question: "In che modo la piattaforma easydoctor supporta i percorsi di cura per i pazienti cronici?",
+    answer: "Per i pazienti cronici, easydoctor offre strumenti di monitoraggio remoto (telemonitoraggio), diari clinici digitali e alert automatici. Questo permette ai medici di rilevare precocemente eventuali peggioramenti o scarsa aderenza, intervenendo proattivamente e riducendo la necessità di ospedalizzazioni non programmate."
+  },
+  {
+    question: "Come posso valutare la rispondenza di easydoctor per le esigenze della mia struttura?",
+    answer: "Offriamo sessioni di demo personalizzate e analisi dei flussi operativi della vostra struttura. Il nostro team di esperti clinici e tecnologici vi supporterà nella configurazione dei protocolli e dei questionari (PROM/PREM) più adatti alle vostre specifiche aree terapeutiche."
+  },
+  {
+    question: "In quanto tempo è possibile avviare un progetto sulla piattaforma easydoctor?",
+    answer: "Grazie alla natura SaaS della piattaforma, l'attivazione tecnica è quasi immediata. I tempi di avvio operativo dipendono solitamente dalla personalizzazione dei percorsi clinici e dalla formazione del personale, ma in media un progetto pilota può essere operativo in poche settimane."
+  },
+  {
+    question: "Ci sono risorse che permettono di agevolare l’avvio di un progetto sulla piattaforma easydoctor?",
+    answer: "Il team di Easy Health è in grado di supportare l’avvio di progetti sulla piattaforma easydoctor mettendo a frutto incentivi e altre risorse in grado di rendere più facile e veloce portare ai propri pazienti i benefici del Digital Patient Engagement."
+  }
+];
 
 const Easydoctor: React.FC = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div className="bg-white">
       {/* Hero Product */}
@@ -357,6 +392,66 @@ const Easydoctor: React.FC = () => {
                 </div>
             </div>
          </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-gray-50 dark:bg-eh-dark transition-colors duration-300">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 text-eh-petrol dark:text-eh-green font-bold mb-4 uppercase tracking-wider text-xs bg-eh-petrol/5 dark:bg-eh-green/10 px-3 py-1 rounded-full">
+                    <HelpCircle className="h-4 w-4" /> FAQ
+                </div>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-eh-black dark:text-white mb-6">
+                    Domande Frequenti su easydoctor
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400">
+                    Tutto quello che c'è da sapere sulla nostra piattaforma di Digital Patient Engagement.
+                </p>
+            </div>
+
+            <div className="space-y-4">
+                {FAQ_ITEMS.map((item, idx) => (
+                    <div 
+                        key={idx} 
+                        className="bg-white dark:bg-eh-darkSurface rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-all"
+                    >
+                        <button 
+                            onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                            className="w-full px-6 py-5 flex items-center justify-between text-left group"
+                        >
+                            <span className="font-bold text-eh-black dark:text-white group-hover:text-eh-petrol dark:group-hover:text-eh-green transition-colors">
+                                {item.question}
+                            </span>
+                            <div className={`shrink-0 ml-4 p-1 rounded-full transition-transform duration-300 ${openFaq === idx ? 'bg-eh-petrol text-white rotate-180' : 'bg-gray-100 dark:bg-gray-800 text-gray-500'}`}>
+                                <ChevronRight className="h-4 w-4" />
+                            </div>
+                        </button>
+                        <AnimatePresence>
+                            {openFaq === idx && (
+                                <motion.div 
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                                        {item.answer}
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                ))}
+            </div>
+
+            <div className="mt-12 p-8 bg-eh-blue dark:bg-gray-800/50 rounded-3xl border border-eh-petrol/10 dark:border-eh-green/10 text-center">
+                <h3 className="text-xl font-bold text-eh-petrol dark:text-eh-green mb-2">Hai altre domande?</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">Il nostro team è pronto a fornirti tutte le risposte di cui hai bisogno.</p>
+                <Link to="/#contatti" className="inline-flex items-center gap-2 font-bold text-eh-petrol dark:text-eh-green hover:underline">
+                    Contattaci ora <ArrowRight className="h-4 w-4" />
+                </Link>
+            </div>
+        </div>
       </section>
 
       {/* CTA Section removed - now in Layout */}

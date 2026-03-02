@@ -9,6 +9,7 @@ import {
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import CookieBanner from './components/CookieBanner';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy Loaded Pages
 const About = React.lazy(() => import('./pages/About'));
@@ -17,6 +18,8 @@ const ClinicalRisk = React.lazy(() => import('./pages/ClinicalRisk'));
 const SecurityConsulting = React.lazy(() => import('./pages/SecurityConsulting'));
 const Faq = React.lazy(() => import('./pages/Faq'));
 const Glossary = React.lazy(() => import('./pages/Glossary'));
+const News = React.lazy(() => import('./pages/News'));
+const NewsDetail = React.lazy(() => import('./pages/NewsDetail'));
 
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 const CookiePolicy = React.lazy(() => import('./pages/CookiePolicy'));
@@ -165,6 +168,7 @@ const Home = () => {
 const App: React.FC = () => {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Layout>
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
@@ -175,6 +179,9 @@ const App: React.FC = () => {
             <Route path="/easydoctor" element={<Easydoctor />} />
             <Route path="/clinical-risk" element={<ClinicalRisk />} />
             <Route path="/security-consulting" element={<SecurityConsulting />} />
+            
+            <Route path="/notizie" element={<News />} />
+            <Route path="/notizie/:id" element={<NewsDetail />} />
             
 
             <Route path="/faq" element={<Faq />} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Smartphone, ShieldAlert, Lock, ArrowRight } from 'lucide-react';
+import { Smartphone, ShieldAlert, Lock, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -12,14 +12,19 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h1 className="text-4xl md:text-6xl font-extrabold text-eh-black leading-tight mb-6">
-            Easy Health: partner per l'innovazione delle <span className="text-eh-petrol">strutture sanitarie</span>
+            Trasformiamo i dati in <span className="text-eh-petrol">Valore Clinico</span> per la tua struttura
           </h1>
-          <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Soluzioni integrate per il Digital Patient Engagement, il Risk Management Sanitario e la Sicurezza dei Dati per organizzazioni pubbliche e private.
+          <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+            Easy Health è il partner strategico per le organizzazioni sanitarie che scelgono il modello <strong className="text-eh-petrol">Value-Based Healthcare</strong>: miglioriamo gli esiti clinici ottimizzando i costi operativi attraverso tecnologie intelligenti.
           </p>
-          <p className="text-sm text-gray-500 font-medium mt-6">
-            Startup innovativa certificata ISO 9001 | Disponibile su Consip e MePa
-          </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <p className="text-sm text-gray-500 font-medium flex items-center">
+              <ShieldCheck className="h-4 w-4 mr-2 text-eh-green" /> Startup innovativa certificata ISO 9001
+            </p>
+            <p className="text-sm text-gray-500 font-medium flex items-center">
+              <ShieldCheck className="h-4 w-4 mr-2 text-eh-green" /> Disponibile su Consip e MePa
+            </p>
+          </div>
         </div>
 
         {/* The 3 Pillars Cards */}
@@ -29,12 +34,12 @@ const Hero: React.FC = () => {
                 <div className="w-14 h-14 bg-eh-blue rounded-2xl flex items-center justify-center text-eh-petrol mb-6 group-hover:bg-eh-petrol group-hover:text-white transition-colors">
                     <Smartphone className="h-7 w-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-eh-petrol transition-colors">Digital Patient Engagement</h3>
+                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-eh-petrol transition-colors">Patient Engagement</h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    Piattaforma <strong>easydoctor</strong> per la raccolta di PROMs/PREMs, telemedicina e percorsi di cura digitali.
+                    Massimizza il valore per il paziente con la raccolta sistematica di <strong>PROMs e PREMs</strong>. Monitoraggio remoto e percorsi di cura personalizzati basati sull'evidenza.
                 </p>
                 <div className="flex items-center text-eh-petrol font-bold text-sm">
-                    Scopri la Piattaforma <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    Ottimizza gli Esiti <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
             </Link>
 
@@ -43,12 +48,12 @@ const Hero: React.FC = () => {
                 <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
                     <ShieldAlert className="h-7 w-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-red-600 transition-colors">Risk Management Sanitario</h3>
+                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-red-600 transition-colors">Clinical Risk Governance</h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    Piattaforma <strong>Easy Risk</strong>. Incident Reporting, monitoraggio cadute, infezioni e gestione sinistri.
+                    Riduci gli eventi avversi e i costi del contenzioso con <strong>Easy Risk</strong>. Incident Reporting predittivo e gestione proattiva della sicurezza del paziente.
                 </p>
                 <div className="flex items-center text-red-600 font-bold text-sm">
-                    Gestione Rischio <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    Garantisci la Sicurezza <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
             </Link>
 
@@ -57,12 +62,12 @@ const Hero: React.FC = () => {
                 <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-700 mb-6 group-hover:bg-eh-black group-hover:text-white transition-colors">
                     <Lock className="h-7 w-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-gray-900 transition-colors">Sicurezza & Compliance</h3>
+                <h3 className="text-2xl font-bold text-eh-black mb-3 group-hover:text-gray-900 transition-colors">Cybersecurity & Compliance</h3>
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    Consulenza organizzativa sui processi. Adeguamento GDPR, certificazione ISO 27001 e direttiva NIS2.
+                    Proteggi il patrimonio informativo sanitario. Adeguamento <strong>NIS2 e GDPR</strong> con un approccio metodologico orientato alla continuità operativa.
                 </p>
                 <div className="flex items-center text-gray-700 font-bold text-sm">
-                    Servizi Consulenza <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    Proteggi i Processi <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
             </Link>
         </div>
