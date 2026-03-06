@@ -7,15 +7,15 @@ const CookiePolicy: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen">
-       <div className="bg-eh-blue py-16">
+    <div className="bg-white dark:bg-eh-dark min-h-screen transition-colors duration-300">
+       <div className="bg-eh-blue dark:bg-eh-darkSurface py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-eh-black mb-4">Politica sui cookie</h1>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-eh-black dark:text-white mb-4">Politica sui cookie</h1>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="prose prose-lg prose-headings:text-eh-petrol text-gray-700 max-w-none">
+        <div className="prose prose-lg prose-headings:text-eh-petrol dark:prose-headings:text-eh-green text-gray-700 dark:text-gray-300 max-w-none">
             
             <section className="mb-10">
                 <p>
@@ -35,79 +35,79 @@ const CookiePolicy: React.FC = () => {
             <section className="mb-12">
                 <p>Ecco una panoramica dei cookie che possono essere memorizzati sul tuo dispositivo quando visiti il nostro sito web:</p>
 
-                <div className="overflow-x-auto rounded-xl border border-gray-200 mt-6 shadow-sm">
+                <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800 mt-6 shadow-sm">
                     <table className="min-w-full text-sm text-left">
-                        <thead className="bg-gray-100 font-bold">
+                        <thead className="bg-gray-100 dark:bg-gray-800 font-bold">
                             <tr>
-                                <th className="p-4 border-b w-[20%]">Categoria del cookie</th>
-                                <th className="p-4 border-b w-[50%]">Scopo</th>
-                                <th className="p-4 border-b w-[30%]">Esempi</th>
+                                <th className="p-4 border-b dark:border-gray-700 w-[20%]">Categoria del cookie</th>
+                                <th className="p-4 border-b dark:border-gray-700 w-[50%]">Scopo</th>
+                                <th className="p-4 border-b dark:border-gray-700 w-[30%]">Esempi</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            <tr className="bg-white">
-                                <td className="p-4 font-bold text-eh-petrol">
+                        <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+                            <tr className="bg-white dark:bg-eh-darkSurface">
+                                <td className="p-4 font-bold text-eh-petrol dark:text-eh-green">
                                     Sessione e sicurezza<br/>(essenziale)
                                 </td>
                                 <td className="p-4">
                                     <p>Autentica gli utenti, proteggi i dati degli utenti e permetti al sito web di fornire i servizi che gli utenti si aspettano, come mantenere il contenuto del loro carrello o permettere l'upload di file.</p>
-                                    <p className="text-xs text-red-500 mt-2">Il sito web non funzionerà correttamente se rifiuti o scarti questi cookie.</p>
+                                    <p className="text-xs text-red-500 mt-2 font-bold">Il sito web non funzionerà correttamente se rifiuti o scarti questi cookie.</p>
                                 </td>
-                                <td className="p-4 font-mono text-xs text-gray-500">
+                                <td className="p-4 font-mono text-xs text-gray-500 dark:text-gray-400">
                                     session_id (Odoo)
                                 </td>
                             </tr>
-                            <tr className="bg-gray-50/50">
-                                <td className="p-4 font-bold text-eh-petrol">
+                            <tr className="bg-gray-50/50 dark:bg-gray-900/50">
+                                <td className="p-4 font-bold text-eh-petrol dark:text-eh-green">
                                     Preferenze<br/>(essenziale)
                                 </td>
                                 <td className="p-4">
                                     <p>Ricorda le informazioni sull'aspetto o il comportamento preferito del sito web, come la lingua o la regione preferita.</p>
-                                    <p className="text-xs text-gray-500 mt-2">La tua esperienza potrebbe essere degradata se elimini questi cookie, ma il sito web continuerà a funzionare.</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">La tua esperienza potrebbe essere degradata se elimini questi cookie, ma il sito web continuerà a funzionare.</p>
                                 </td>
-                                <td className="p-4 font-mono text-xs text-gray-500">
+                                <td className="p-4 font-mono text-xs text-gray-500 dark:text-gray-400">
                                     frontend_lang (Odoo)
                                 </td>
                             </tr>
-                            <tr className="bg-white">
-                                <td className="p-4 font-bold text-eh-petrol">
+                            <tr className="bg-white dark:bg-eh-darkSurface">
+                                <td className="p-4 font-bold text-eh-petrol dark:text-eh-green">
                                     Cronologia interazioni<br/>(opzionale)
                                 </td>
                                 <td className="p-4">
                                     <p>Utilizzato per raccogliere informazioni sulle tue interazioni con il sito web, le pagine che hai visto e qualsiasi campagna di marketing specifica che ti ha portato al sito web.</p>
-                                    <p className="text-xs text-gray-500 mt-2">Potremmo non essere in grado di fornirti il miglior servizio se rifiuti questi cookie, ma il sito web funzionerà.</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Potremmo non essere in grado di fornirti il miglior servizio se rifiuti questi cookie, ma il sito web funzionerà.</p>
                                 </td>
-                                <td className="p-4 font-mono text-xs text-gray-500">
+                                <td className="p-4 font-mono text-xs text-gray-500 dark:text-gray-400">
                                     im_livechat_previous_operator (Odoo)<br/>
                                     utm_campaign (Odoo)<br/>
                                     utm_source (Odoo)<br/>
                                     utm_medium (Odoo)
                                 </td>
                             </tr>
-                            <tr className="bg-gray-50/50">
-                                <td className="p-4 font-bold text-eh-petrol">
+                            <tr className="bg-gray-50/50 dark:bg-gray-900/50">
+                                <td className="p-4 font-bold text-eh-petrol dark:text-eh-green">
                                     Pubblicità & marketing<br/>(facoltativo)
                                 </td>
                                 <td className="p-4">
                                     <p>Utilizzato per rendere la pubblicità più coinvolgente per gli utenti e più preziosa per gli editori e gli inserzionisti, come ad esempio fornire annunci più pertinenti quando si visitano altri siti web che visualizzano annunci o per migliorare il reporting sulle prestazioni delle campagne pubblicitarie.</p>
-                                    <p className="text-xs text-gray-500 mt-2">Nota che alcuni servizi di terze parti possono installare ulteriori cookie sul tuo browser al fine di identificarti.</p>
-                                    <p className="text-xs text-gray-500 mt-2">È possibile rifiutare l'utilizzo dei cookie da parte di terze parti visitando la pagina <a href="https://optout.networkadvertising.org/?c=1" rel="nofollow" className="text-eh-petrol underline">Network Advertising Initiative</a>. Il sito web continuerà a funzionare se non accetti i cookie.</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Nota che alcuni servizi di terze parti possono installare ulteriori cookie sul tuo browser al fine di identificarti.</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">È possibile rifiutare l'utilizzo dei cookie da parte di terze parti visitando la pagina <a href="https://optout.networkadvertising.org/?c=1" rel="nofollow" className="text-eh-petrol dark:text-eh-green underline">Network Advertising Initiative</a>. Il sito web continuerà a funzionare se non accetti i cookie.</p>
                                 </td>
-                                <td className="p-4 font-mono text-xs text-gray-500">
+                                <td className="p-4 font-mono text-xs text-gray-500 dark:text-gray-400">
                                     __gads (Google)<br/>
                                     __gac (Google)
                                 </td>
                             </tr>
-                            <tr className="bg-white">
-                                <td className="p-4 font-bold text-eh-petrol">
+                            <tr className="bg-white dark:bg-eh-darkSurface">
+                                <td className="p-4 font-bold text-eh-petrol dark:text-eh-green">
                                     Analytics<br/>(opzionali)
                                 </td>
                                 <td className="p-4">
                                     <p>Capisci in che modo i visitatori arrivano al nostro sito web grazie a Google Analytics.</p>
-                                    <p className="text-xs text-gray-500 mt-2">Scopri di più su <a href="https://support.google.com/analytics/answer/11397207?hl=en" className="text-eh-petrol underline">cookie e informazioni sulla privacy di Analytics</a>.</p>
-                                    <p className="text-xs text-gray-500 mt-2">Il sito web continuerà a funzionare anche se rifiuti o elimini questi cookie.</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Scopri di più su <a href="https://support.google.com/analytics/answer/11397207?hl=en" className="text-eh-petrol dark:text-eh-green underline">cookie e informazioni sulla privacy di Analytics</a>.</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Il sito web continuerà a funzionare anche se rifiuti o elimini questi cookie.</p>
                                 </td>
-                                <td className="p-4 font-mono text-xs text-gray-500">
+                                <td className="p-4 font-mono text-xs text-gray-500 dark:text-gray-400">
                                     _ga (Google)<br/>
                                     _gat (Google)<br/>
                                     _gid (Google)<br/>

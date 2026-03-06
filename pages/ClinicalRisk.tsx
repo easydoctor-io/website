@@ -8,64 +8,64 @@ import { Link } from 'react-router-dom';
 
 const ClinicalRisk: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-eh-dark transition-colors duration-300">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-eh-blue to-white pt-32 pb-20 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-eh-blue to-white dark:from-eh-dark dark:to-eh-darkSurface pt-32 pb-20 relative overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-eh-petrol/20 text-eh-petrol text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-white dark:bg-eh-darkSurface border border-eh-petrol/20 dark:border-eh-green/20 text-eh-petrol dark:text-eh-green text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
                 Easy Risk
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-eh-black mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-eh-black dark:text-white mb-6 leading-tight">
                 Risk Management Sanitario <br/>
-                <span className="text-eh-petrol">Integrato e Predittivo</span>
+                <span className="text-eh-petrol dark:text-eh-green">Integrato e Predittivo</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-8 leading-relaxed">
                 La piattaforma <strong>Easy Risk</strong> centralizza la gestione del rischio clinico ospedaliero. Dall'Incident Reporting alla gestione dei sinistri, offriamo una visione completa per la sicurezza del paziente e la tutela della struttura.
             </p>
             <div className="flex gap-4">
-                <a href="#contatti" className="bg-eh-petrol text-white px-8 py-3.5 rounded-xl font-bold hover:bg-eh-green hover:text-eh-petrol transition-all shadow-lg shadow-eh-petrol/20">
+                <a href="#contatti" className="bg-eh-petrol dark:bg-eh-green dark:text-eh-petrol text-white px-8 py-3.5 rounded-xl font-bold hover:bg-eh-green hover:text-eh-petrol transition-all shadow-lg shadow-eh-petrol/20">
                     Richiedi Demo Easy Risk
                 </a>
             </div>
         </div>
         {/* Decorative bg */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-eh-green/10 skew-x-12 transform origin-top-right"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-eh-green/10 dark:bg-eh-green/5 skew-x-12 transform origin-top-right"></div>
       </section>
 
       {/* Normative Context Section */}
-      <section className="py-16 bg-gray-50 border-b border-gray-100">
+      <section className="py-16 bg-gray-50 dark:bg-eh-darkSurface/30 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl font-bold text-eh-black mb-6">Il Contesto Normativo Italiano</h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <h2 className="text-3xl font-bold text-eh-black dark:text-white mb-6">Il Contesto Normativo Italiano</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                     La gestione del rischio clinico non è più solo una buona pratica organizzativa, ma un obbligo esplicito per tutte le strutture sanitarie.
                 </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6">
+                <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6">
                         <Gavel className="h-6 w-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-eh-black mb-3">Legge 24/2017 (Gelli-Bianco)</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <h3 className="text-xl font-bold text-eh-black dark:text-white mb-3">Legge 24/2017 (Gelli-Bianco)</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                         Qualifica la sicurezza delle cure come parte costitutiva del diritto alla salute e richiede l’attivazione di funzioni strutturate di prevenzione e gestione del rischio sanitario.
                     </p>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6">
+                <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6">
                         <BookOpen className="h-6 w-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-eh-black mb-3">D.lgs. 502/1992 & L. 208/2015</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <h3 className="text-xl font-bold text-eh-black dark:text-white mb-3">D.lgs. 502/1992 & L. 208/2015</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                         Inquadrano qualità, appropriatezza e governo clinico, definendo la necessità di sistemi informativi capaci di documentare in modo tracciabile il monitoraggio a livello aziendale.
                     </p>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6">
+                <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6">
                         <ClipboardCheck className="h-6 w-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-eh-black mb-3">Raccomandazioni Ministeriali</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <h3 className="text-xl font-bold text-eh-black dark:text-white mb-3">Raccomandazioni Ministeriali</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                         Le 19 raccomandazioni sugli eventi sentinella sono richiamate come riferimento operativo e giuridicamente rilevante per orientare i modelli organizzativi e la formazione.
                     </p>
                 </div>
@@ -74,77 +74,77 @@ const ClinicalRisk: React.FC = () => {
       </section>
 
       {/* Main Features Grid (Software) */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-eh-dark transition-colors duration-300">
         <div className="text-center mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-eh-black mb-6">Easy Risk: La piattaforma di Risk Management</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <h2 className="text-3xl font-bold text-eh-black dark:text-white mb-6">Easy Risk: La piattaforma di Risk Management</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Pensata per supportare direzioni sanitarie, uffici qualità e risk manager nella prevenzione degli eventi avversi e nel miglioramento continuo della sicurezza delle cure. Permette di raccogliere, analizzare e monitorare in modo strutturato segnalazioni, incidenti e feedback, trasformandoli in piani di miglioramento misurabili.
             </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* 1. Registro unico dei rischi */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol dark:hover:border-eh-green group">
+                <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:scale-110 transition-transform">
                     <Database className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Registro Unico dei Rischi</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-eh-petrol dark:group-hover:text-eh-green transition-colors">Registro Unico dei Rischi</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     Centralizza tutti i rischi sanitari e organizzativi in un unico cruscotto. Ogni rischio è classificato per area, processo, probabilità, impatto e stato delle azioni, offrendo una fotografia aggiornata delle criticità prioritarie.
                 </p>
             </div>
 
             {/* 2. Incident reporting strutturato */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol dark:hover:border-eh-green group">
+                <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:scale-110 transition-transform">
                     <ShieldAlert className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Incident Reporting Strutturato</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-eh-petrol dark:group-hover:text-eh-green transition-colors">Incident Reporting Strutturato</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     Segnalazione facilitata di near miss, eventi avversi, eventi sentinella, errori in terapia e cadute. Workflow definito (presa in carico, analisi, azioni correttive, chiusura) completamente tracciato e documentabile.
                 </p>
             </div>
 
             {/* 3. Rischi allineati */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol dark:hover:border-eh-green group">
+                <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:scale-110 transition-transform">
                     <Activity className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Aree Prioritarie Ministeriali</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-eh-petrol dark:group-hover:text-eh-green transition-colors">Aree Prioritarie Ministeriali</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     Mappatura e monitoraggio delle tipologie di rischio delle raccomandazioni ministeriali: identificazione paziente, chirurgia, terapia farmacologica (LASA), rischio trasfusionale, ICA, cadute e gestione dispositivi medici.
                 </p>
             </div>
 
             {/* 4. PARM */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol dark:hover:border-eh-green group">
+                <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:scale-110 transition-transform">
                     <FileSearch className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Piano Annuale (PARM)</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-eh-petrol dark:group-hover:text-eh-green transition-colors">Piano Annuale (PARM)</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     Il Piano Annuale di Risk Management diventa un processo vivo. Raccolta strutturata di dati per definire priorità e monitorare le azioni di prevenzione e mitigazione del rischio.
                 </p>
             </div>
 
             {/* 5. Relazione Annuale */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol dark:hover:border-eh-green group">
+                <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:scale-110 transition-transform">
                     <ClipboardCheck className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Relazione Annuale</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-eh-petrol dark:group-hover:text-eh-green transition-colors">Relazione Annuale</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     Generazione automatica della relazione annuale sul rischio clinico per la Direzione, aggregando tutti i dati raccolti durante l'anno per una rendicontazione chiara e conforme alla normativa.
                 </p>
             </div>
 
             {/* 6. Feedback Pazienti & Gestione Sinistri */}
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol group">
-                <div className="w-12 h-12 bg-eh-blue rounded-xl flex items-center justify-center text-eh-petrol mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-white dark:bg-eh-darkSurface p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all hover:border-eh-petrol dark:hover:border-eh-green group">
+                <div className="w-12 h-12 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:scale-110 transition-transform">
                     <Users className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-eh-petrol transition-colors">Feedback Pazienti & Gestione Sinistri</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-eh-petrol dark:group-hover:text-eh-green transition-colors">Feedback Pazienti & Gestione Sinistri</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     Raccoglie e valorizza reclami e indagini di soddisfazione, integrandoli con la dashboard del contenzioso legale. Un'analisi completa da sinistri aperti/chiusi fino alla voce del paziente per la prevenzione futura.
                 </p>
             </div>
@@ -152,7 +152,7 @@ const ClinicalRisk: React.FC = () => {
       </section>
 
       {/* Consulting Section (NEW) */}
-      <section className="bg-eh-black text-white py-20">
+      <section className="bg-eh-black dark:bg-black text-white py-20 transition-colors duration-300">
          <div className="max-w-7xl mx-auto px-4">
              <div className="flex flex-col md:flex-row gap-12 items-center">
                  <div className="md:w-1/2">

@@ -7,15 +7,15 @@ const PrivacyPolicy: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen">
-      <div className="bg-eh-blue py-16">
+    <div className="bg-white dark:bg-eh-dark min-h-screen transition-colors duration-300">
+      <div className="bg-eh-blue dark:bg-eh-darkSurface py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-eh-black mb-4">Politica privacy</h1>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-eh-black dark:text-white mb-4">Politica privacy</h1>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="prose prose-lg prose-headings:text-eh-petrol prose-a:text-eh-green hover:prose-a:text-eh-petrol text-gray-700 max-w-none">
+        <div className="prose prose-lg prose-headings:text-eh-petrol dark:prose-headings:text-eh-green prose-a:text-eh-green dark:prose-a:text-eh-green hover:prose-a:text-eh-petrol text-gray-700 dark:text-gray-300 max-w-none">
             
             <section className="mb-12">
                 <p className="lead">
@@ -133,33 +133,33 @@ const PrivacyPolicy: React.FC = () => {
             <p>Tutti i sub-responsabili sono vincolati da contratti che garantiscono il rispetto del GDPR. L'elenco aggiornato è disponibile su richiesta all'indirizzo email sopra indicato.</p>
 
             <div className="overflow-x-auto my-6">
-                <table className="min-w-full text-sm text-left border rounded-lg overflow-hidden">
-                    <thead className="bg-gray-100 font-bold">
+                <table className="min-w-full text-sm text-left border dark:border-gray-800 rounded-lg overflow-hidden">
+                    <thead className="bg-gray-100 dark:bg-gray-800 font-bold">
                         <tr>
-                            <th className="p-3 border">Finalità del trattamento</th>
-                            <th className="p-3 border">Base giuridica del trattamento</th>
+                            <th className="p-3 border dark:border-gray-700">Finalità del trattamento</th>
+                            <th className="p-3 border dark:border-gray-700">Base giuridica del trattamento</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="dark:bg-eh-darkSurface">
                         <tr>
-                            <td className="p-3 border">Erogazione dei servizi richiesti dall'Utente</td>
-                            <td className="p-3 border">Esecuzione di contratto / Misure precontrattuali</td>
+                            <td className="p-3 border dark:border-gray-700">Erogazione dei servizi richiesti dall'Utente</td>
+                            <td className="p-3 border dark:border-gray-700">Esecuzione di contratto / Misure precontrattuali</td>
                         </tr>
                         <tr>
-                            <td className="p-3 border">Comunicazioni informative o promemoria terapeutici</td>
-                            <td className="p-3 border">Consenso esplicito dell'interessato</td>
+                            <td className="p-3 border dark:border-gray-700">Comunicazioni informative o promemoria terapeutici</td>
+                            <td className="p-3 border dark:border-gray-700">Consenso esplicito dell'interessato</td>
                         </tr>
                         <tr>
-                            <td className="p-3 border">Invio di newsletter o comunicazioni promozionali</td>
-                            <td className="p-3 border">Consenso dell'interessato</td>
+                            <td className="p-3 border dark:border-gray-700">Invio di newsletter o comunicazioni promozionali</td>
+                            <td className="p-3 border dark:border-gray-700">Consenso dell'interessato</td>
                         </tr>
                         <tr>
-                            <td className="p-3 border">Analisi interna e ottimizzazione dei servizi</td>
-                            <td className="p-3 border">Legittimo interesse del Titolare</td>
+                            <td className="p-3 border dark:border-gray-700">Analisi interna e ottimizzazione dei servizi</td>
+                            <td className="p-3 border dark:border-gray-700">Legittimo interesse del Titolare</td>
                         </tr>
                         <tr>
-                            <td className="p-3 border">Conservazione a fini fiscali o legali</td>
-                            <td className="p-3 border">Obbligo legale del Titolare</td>
+                            <td className="p-3 border dark:border-gray-700">Conservazione a fini fiscali o legali</td>
+                            <td className="p-3 border dark:border-gray-700">Obbligo legale del Titolare</td>
                         </tr>
                     </tbody>
                 </table>
@@ -179,23 +179,23 @@ const PrivacyPolicy: React.FC = () => {
             <p>Easy Health non effettua profilazione automatizzata con effetti giuridici sull'Utente. Tuttavia, utilizza strumenti analitici per migliorare l'esperienza utente e ottimizzare i servizi, attraverso il monitoraggio pseudonimizzato del comportamento di navigazione (es. heatmap, frequenza di accesso, percorsi utente). Tali dati non permettono l'identificazione diretta dell'Utente.</p>
             <p>L'Utente può sempre gestire o revocare il consenso all'uso di cookie e tracker tramite il banner di consenso o le impostazioni del browser.</p>
 
-            <section className="mt-12 bg-gray-50 p-8 rounded-2xl border border-gray-100">
+            <section className="mt-12 bg-gray-50 dark:bg-eh-darkSurface p-8 rounded-2xl border border-gray-100 dark:border-gray-800">
                 <h2 className="flex items-center gap-2 mt-0">
                     <Shield className="h-6 w-6" /> Titolare del Trattamento
                 </h2>
-                <p className="mb-1 font-bold text-eh-black">Easy Health S.r.l. Società Benefit</p>
+                <p className="mb-1 font-bold text-eh-black dark:text-white">Easy Health S.r.l. Società Benefit</p>
                 <p className="mb-1">Via Arcivescovo Calabiana 6, 20139 Milano (MI)</p>
                 <p className="mb-1">P. IVA 11607630966</p>
                 <p className="mb-0">
-                    Email: <a href="mailto:info@easydoctor.io" className="font-bold">info@easydoctor.io</a><br/>
+                    Email: <a href="mailto:info@easydoctor.io" className="font-bold text-eh-petrol dark:text-eh-green">info@easydoctor.io</a><br/>
                     PEC: easyhealth@pec.it
                 </p>
                 
-                <hr className="my-6 border-gray-200" />
+                <hr className="my-6 border-gray-200 dark:border-gray-700" />
                 
-                <h3 className="text-lg font-bold text-gray-900 mt-0">Responsabile della Protezione dei Dati (RPD/DPO)</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-0">Responsabile della Protezione dei Dati (RPD/DPO)</h3>
                 <p className="mb-0">Atenanet srls</p>
-                <p className="mb-0"><a href="mailto:dpo@easydoctor.io">dpo@easydoctor.io</a></p>
+                <p className="mb-0"><a href="mailto:dpo@easydoctor.io" className="text-eh-petrol dark:text-eh-green">dpo@easydoctor.io</a></p>
             </section>
 
         </div>

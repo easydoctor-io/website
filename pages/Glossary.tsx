@@ -183,7 +183,7 @@ const Glossary: React.FC = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="mt-20 p-8 bg-eh-petrol text-white rounded-3xl overflow-hidden relative"
+                    className="mt-20 p-8 bg-eh-petrol dark:bg-eh-darkSurface text-white rounded-3xl overflow-hidden relative transition-colors duration-300"
                 >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">

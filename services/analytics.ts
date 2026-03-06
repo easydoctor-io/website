@@ -25,17 +25,12 @@ export const trackEvent = async (eventName: string, params: object = {}) => {
       }
     }
 
-    await fetch('/api/track', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        clientId,
-        eventName,
-        params,
-      }),
-    });
+    // Use direct gtag call if available, otherwise skip
+    // @ts-ignore
+    if (window.gtag) {
+      // @ts-ignore
+      window.gtag('event', eventName, params);
+    }
   } catch (error) {
     console.error('Analytics error:', error);
   }

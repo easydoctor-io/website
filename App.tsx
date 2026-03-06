@@ -44,12 +44,12 @@ const Home = () => {
       <Hero />
 
       {/* SECTION 2: Trusted By / Partners (Moved here as requested) */}
-      <section className="bg-white border-b border-gray-100 py-12">
+      <section className="bg-white dark:bg-eh-darkSurface border-b border-gray-100 dark:border-gray-800 py-12 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-gray-400 font-bold mb-8 uppercase tracking-widest text-xs">
+            <p className="text-gray-400 dark:text-gray-500 font-bold mb-8 uppercase tracking-widest text-xs">
                 Collaboriamo con eccellenze del settore
             </p>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-50 dark:hover:opacity-100">
                 {[
                   { name: "ASST Crema", domain: "asst-crema.it" },
                   { name: "Centro Cardiologico Monzino", domain: "cardiologicomonzino.it" },
@@ -137,13 +137,13 @@ const Home = () => {
                              <ChevronRight className="h-8 w-8 text-gray-300 dark:text-gray-600 rotate-90" />
                         </div>
                         <div className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-200 dark:border-gray-600 grid grid-cols-2 gap-4">
-                             <div className="bg-white p-3 rounded shadow-sm text-center">
+                             <div className="bg-white dark:bg-gray-800 p-3 rounded shadow-sm text-center">
                                 <div className="text-xs font-bold text-gray-400 uppercase mb-1">Paziente</div>
-                                <div className="font-bold text-eh-black">PROMs / PREMs</div>
+                                <div className="font-bold text-eh-black dark:text-white">PROMs / PREMs</div>
                              </div>
-                             <div className="bg-white p-3 rounded shadow-sm text-center">
+                             <div className="bg-white dark:bg-gray-800 p-3 rounded shadow-sm text-center">
                                 <div className="text-xs font-bold text-gray-400 uppercase mb-1">Struttura</div>
-                                <div className="font-bold text-eh-black">Risk & Audit</div>
+                                <div className="font-bold text-eh-black dark:text-white">Risk & Audit</div>
                              </div>
                         </div>
                         <div className="flex justify-center py-2">

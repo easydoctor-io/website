@@ -36,22 +36,22 @@ const Faq: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <div className="bg-white min-h-screen py-20">
+        <div className="bg-white dark:bg-eh-dark min-h-screen py-20 transition-colors duration-300">
             <div className="max-w-3xl mx-auto px-4">
-                <h1 className="text-4xl font-extrabold text-center text-eh-black mb-12">Domande Frequenti</h1>
+                <h1 className="text-4xl font-extrabold text-center text-eh-black dark:text-white mb-12">Domande Frequenti</h1>
                 
                 <div className="space-y-4">
                     {FAQ_ITEMS.map((item, idx) => (
-                        <div key={idx} className="border border-gray-200 rounded-xl bg-white overflow-hidden">
+                        <div key={idx} className="border border-gray-200 dark:border-gray-800 rounded-xl bg-white dark:bg-eh-darkSurface overflow-hidden">
                             <button 
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between p-5 text-left bg-gray-50 hover:bg-eh-blue/30 transition-colors"
+                                className="w-full flex items-center justify-between p-5 text-left bg-gray-50 dark:bg-gray-800/50 hover:bg-eh-blue/30 dark:hover:bg-eh-green/10 transition-colors"
                             >
-                                <span className="font-bold text-eh-petrol text-lg pr-4">{item.q}</span>
-                                {openIndex === idx ? <ChevronUp className="h-5 w-5 text-eh-petrol shrink-0" /> : <ChevronDown className="h-5 w-5 text-gray-400 shrink-0" />}
+                                <span className="font-bold text-eh-petrol dark:text-eh-green text-lg pr-4">{item.q}</span>
+                                {openIndex === idx ? <ChevronUp className="h-5 w-5 text-eh-petrol dark:text-eh-green shrink-0" /> : <ChevronDown className="h-5 w-5 text-gray-400 shrink-0" />}
                             </button>
                             {openIndex === idx && (
-                                <div className="p-5 text-gray-600 leading-relaxed border-t border-gray-100 bg-white">
+                                <div className="p-5 text-gray-600 dark:text-gray-300 leading-relaxed border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-eh-darkSurface">
                                     {item.a}
                                 </div>
                             )}
@@ -59,9 +59,9 @@ const Faq: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="mt-16 bg-eh-blue p-8 rounded-2xl text-center">
-                    <h3 className="text-xl font-bold text-eh-black mb-2">Hai altre domande?</h3>
-                    <p className="text-gray-600 mb-6">Il nostro team è pronto a rispondere alle tue esigenze specifiche.</p>
+                <div className="mt-16 bg-eh-blue dark:bg-eh-darkSurface p-8 rounded-2xl text-center">
+                    <h3 className="text-xl font-bold text-eh-black dark:text-white mb-2">Hai altre domande?</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">Il nostro team è pronto a rispondere alle tue esigenze specifiche.</p>
                     <a href="mailto:info@easydoctor.io" className="inline-block bg-eh-petrol text-white px-6 py-3 rounded-xl font-bold hover:bg-eh-green hover:text-eh-petrol transition-colors">
                         Scrivici una email
                     </a>
