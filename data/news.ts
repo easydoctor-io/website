@@ -26,28 +26,46 @@ export const newsData = [
     },
     {
       id: "case-study-oncocare-asst-crema",
-      title: "Case Study: OncoCare per il tumore della mammella e della prostata",
+      title: "Case Study: OncoCare per il tumore al seno e della prostata",
       content: `
-        <p><strong>Implementazione di percorsi di Digital Patient Engagement per il monitoraggio dei pazienti oncologici presso l'ASST di Crema.</strong></p>
-        
-        <h2 class="text-2xl font-bold mt-8 mb-4">Il Percorso OncoCare</h2>
-        <p>Il progetto OncoCare si focalizza su due delle patologie oncologiche più diffuse: il tumore della mammella e il tumore della prostata. L'obiettivo è supportare il paziente durante l'intero iter terapeutico, dalla diagnosi al follow-up.</p>
+        <p><strong>L’Innovazione che Abbraccia il Paziente: Il Percorso OncoCare tra Scienza e Umanità</strong></p>
+        <p>Ricevere una diagnosi oncologica è un momento di rottura. In un istante, il linguaggio del quotidiano viene sostituito da termini medici complessi e il tempo inizia a scorrere secondo i ritmi delle terapie. In questo scenario, la sfida della medicina moderna non è solo "curare l’organo", ma prendersi cura della persona.</p>
+        <p>È da questa visione Human-Centered che nasce la collaborazione tra Easy Health, attraverso la piattaforma easydoctor, e l’ASST di Crema. Insieme, hanno dato vita a OncoCare: un percorso digitale e clinico dedicato ai pazienti affetti da tumore al seno e alla prostata.</p>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Monitoraggio e Supporto</h2>
-        <p>Attraverso la piattaforma, i pazienti possono:</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">La Scienza oltre la Scrivania: Cos’è OncoCare?</h2>
+        <p>Da un punto di vista scientifico, la gestione oncologica moderna si sta spostando verso il modello della Connected Care. Non basta più la visita sporadica in ambulatorio; serve un monitoraggio continuo che permetta di intercettare precocemente eventuali complicanze o effetti collaterali delle terapie.</p>
+        <p>Il progetto OncoCare utilizza la piattaforma easydoctor come un ponte digitale. Questo strumento permette di:</p>
         <ul>
-          <li>Segnalare tempestivamente eventuali effetti collaterali delle terapie (PROMs).</li>
-          <li>Accedere a risorse educative specifiche per la propria condizione.</li>
-          <li>Mantenere un canale di comunicazione aperto e sicuro con l'equipe oncologica.</li>
+          <li>Monitorare i parametri clinici in tempo reale.</li>
+          <li>Raccogliere i PROMs (Patient-Reported Outcome Measures), ovvero i dati sulla qualità della vita riportati direttamente dal paziente.</li>
+          <li>Garantire una continuità assistenziale che riduce il senso di isolamento tipico del post-trattamento.</li>
         </ul>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Valore per la Struttura</h2>
-        <p>Per l'ASST di Crema, OncoCare rappresenta uno strumento fondamentale per ottimizzare la gestione dei pazienti, riducendo gli accessi impropri in ospedale e garantendo che le risorse siano concentrate sui casi che richiedono attenzione immediata, migliorando complessivamente l'efficienza del reparto di oncologia.</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Focus: Tumore al Seno e alla Prostata</h2>
+        <p>La scelta di focalizzarsi su queste due patologie non è casuale. Si tratta di condizioni ad alta prevalenza che richiedono follow-up lunghi e personalizzati.</p>
+        <p>Nel tumore al seno, l’attenzione è rivolta alla gestione delle terapie ormonali e al supporto psicofisico.</p>
+        <p>Nel tumore alla prostata, il monitoraggio costante permette una gestione ottimale della sorveglianza attiva e degli esiti funzionali.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Il Cuore del Progetto: L’Approccio Human-Centered</h2>
+        <p>Spesso si teme che la tecnologia possa "raffreddare" il rapporto medico-paziente. OncoCare dimostra l'esatto contrario. Qui, il digitale è un abilitatore di empatia.</p>
+        <p>Essere "Human-Centered" significa riconoscere che il paziente non è un insieme di dati, ma un individuo con una vita, una famiglia e dei timori. La piattaforma easydoctor non sostituisce il medico dell’ASST di Crema, ma lo rende più vicino.</p>
+        <p><em>"La tecnologia ci permette di essere presenti nella quotidianità del paziente, non solo nel momento della crisi. Questo trasforma la cura da una serie di appuntamenti a un percorso di accompagnamento continuo."</em></p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">I vantaggi per la persona</h2>
+        <ul>
+          <li><strong>Sicurezza:</strong> Sapere di essere monitorati costantemente riduce l’ansia.</li>
+          <li><strong>Autonomia:</strong> Il paziente diventa parte attiva del proprio percorso di cura (Empowerment).</li>
+          <li><strong>Prossimità:</strong> Meno spostamenti non necessari verso l'ospedale, più tempo per la propria vita.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Una Medicina più Giusta, una Tecnologia più Umana</h2>
+        <p>Il progetto di Easy Health con l’ASST di Crema è un esempio di come la medicina di precisione possa camminare di pari passo con la medicina della narrazione. Utilizzare dati scientifici per personalizzare la cura non serve solo a migliorare gli outcome clinici, ma a onorare la dignità di chi affronta la malattia.</p>
+        <p>Perché, alla fine, l'obiettivo della scienza non è solo aggiungere anni alla vita, ma aggiungere qualità e calore a quegli anni.</p>
       `,
       tags: ["Case Studies", "Oncologia", "ASST Crema"],
       coverImage: null,
-      authorName: "Alberto Giacobone",
-      createdAt: new Date("2024-10-20").toISOString()
+      authorName: "Fabio Vantaggiato",
+      createdAt: new Date("2026-03-06").toISOString()
     },
     {
       id: "case-study-neurocare-asst-crema",

@@ -60,10 +60,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <div className="font-bold text-gray-800 dark:text-white">Sicurezza & Dati</div>
                             <div className="text-xs text-gray-500">Consulting & Compliance</div>
                         </Link>
-                        <Link to="/notizie?tag=Case Studies" className="block px-4 py-3 rounded-lg hover:bg-eh-blue dark:hover:bg-gray-700 text-sm border-t border-gray-100 dark:border-gray-800 mt-1">
-                            <div className="font-bold text-eh-petrol dark:text-eh-green">Case Studies</div>
-                            <div className="text-xs text-gray-500">I nostri progetti di successo</div>
-                        </Link>
                     </div>
                 </div>
                 
@@ -218,7 +214,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <li><Link to="/easydoctor" className="hover:text-eh-green transition-colors">Digital Patient Engagement</Link></li>
                         <li><Link to="/clinical-risk" className="hover:text-eh-green transition-colors">Clinical Risk Management</Link></li>
                         <li><Link to="/security-consulting" className="hover:text-eh-green transition-colors">Sicurezza & Compliance</Link></li>
-                        <li><Link to="/notizie?tag=Case Studies" className="hover:text-eh-green transition-colors font-bold text-eh-green">Case Studies</Link></li>
                         <li><Link to="/glossario" className="hover:text-eh-green transition-colors">Glossario</Link></li>
                     </ul>
                 </div>

@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
         {/* The 3 Pillars Cards */}
         <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1: DPE */}
-            <Link to="/easydoctor" className="group bg-white dark:bg-eh-darkSurface rounded-3xl p-8 shadow-xl shadow-eh-petrol/5 dark:shadow-none border border-transparent hover:border-eh-green transition-all duration-300 transform hover:-translate-y-1">
+            <div className="group bg-white dark:bg-eh-darkSurface rounded-3xl p-8 shadow-xl shadow-eh-petrol/5 dark:shadow-none border border-transparent hover:border-eh-green transition-all duration-300 transform hover:-translate-y-1">
                 <div className="w-14 h-14 bg-eh-blue dark:bg-eh-dark rounded-2xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:bg-eh-petrol group-hover:text-white transition-colors">
                     <Smartphone className="h-7 w-7" />
                 </div>
@@ -38,24 +38,24 @@ const Hero: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
                     Massimizza il valore per il paziente con la raccolta sistematica di <strong>PROMs e PREMs</strong>. Monitoraggio remoto e percorsi di cura personalizzati basati sull'evidenza.
                 </p>
-                <div className="flex items-center text-eh-petrol dark:text-eh-green font-bold text-sm">
-                    Ottimizza gli Esiti <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-            </Link>
+                <Link to="/easydoctor" className="flex items-center text-eh-petrol dark:text-eh-green font-bold text-sm hover:underline">
+                    Scopri easydoctor <ArrowRight className="h-4 w-4 ml-2" />
+                </Link>
+            </div>
 
             {/* Card 2: Risk */}
-            <Link to="/clinical-risk" className="group bg-white dark:bg-eh-darkSurface rounded-3xl p-8 shadow-xl shadow-eh-petrol/5 dark:shadow-none border border-transparent hover:border-red-400 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="group bg-white dark:bg-eh-darkSurface rounded-3xl p-8 shadow-xl shadow-eh-petrol/5 dark:shadow-none border border-transparent hover:border-red-400 transition-all duration-300 transform hover:-translate-y-1">
                 <div className="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-2xl flex items-center justify-center text-red-600 dark:text-red-400 mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
                     <ShieldAlert className="h-7 w-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-eh-black dark:text-white mb-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">Clinical Risk Governance</h3>
+                <h3 className="text-2xl font-bold text-eh-black dark:text-white mb-3 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">Risk Management Sanitario</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                    Riduci gli eventi avversi e i costi del contenzioso con <strong>Easy Risk</strong>. Incident Reporting predittivo e gestione proattiva della sicurezza del paziente.
+                    Riduci gli eventi avversi e i costi del contenzioso con le nostre soluzioni. Incident Reporting predittivo e gestione proattiva della sicurezza del paziente.
                 </p>
-                <div className="flex items-center text-red-600 dark:text-red-400 font-bold text-sm">
-                    Garantisci la Sicurezza <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-            </Link>
+                <Link to="/clinical-risk" className="flex items-center text-red-600 dark:text-red-400 font-bold text-sm hover:underline">
+                    Scopri easyrisk <ArrowRight className="h-4 w-4 ml-2" />
+                </Link>
+            </div>
 
             {/* Card 3: Security */}
             <Link to="/security-consulting" className="group bg-white dark:bg-eh-darkSurface rounded-3xl p-8 shadow-xl shadow-eh-petrol/5 dark:shadow-none border border-transparent hover:border-eh-black dark:hover:border-white transition-all duration-300 transform hover:-translate-y-1">

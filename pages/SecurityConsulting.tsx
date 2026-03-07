@@ -74,7 +74,7 @@ const SecurityConsulting: React.FC = () => {
                <p className="text-gray-500 dark:text-gray-400 mt-4">Un approccio olistico che unisce legale, tecnologico e organizzativo.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
               
               {/* GDPR */}
               <div className="bg-white dark:bg-eh-darkSurface border border-gray-200 dark:border-gray-800 p-8 rounded-2xl shadow-sm hover:border-eh-petrol dark:hover:border-eh-green transition-colors group">
@@ -82,7 +82,7 @@ const SecurityConsulting: React.FC = () => {
                       <ShieldCheck className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold text-eh-black dark:text-white mb-4">GDPR & Privacy</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 min-h-[80px]">
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">
                       Non solo burocrazia, ma governance del dato. Offriamo il servizio di <strong>DPO esterno</strong> specializzato in sanità digitale e gestione dei Data Breach h24.
                   </p>
                   <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
@@ -92,29 +92,13 @@ const SecurityConsulting: React.FC = () => {
                   </ul>
               </div>
 
-              {/* ISO 27001 */}
-              <div className="bg-white dark:bg-eh-darkSurface border border-gray-200 dark:border-gray-800 p-8 rounded-2xl shadow-sm hover:border-eh-petrol dark:hover:border-eh-green transition-colors group">
-                  <div className="w-14 h-14 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:bg-eh-petrol group-hover:text-white transition-colors">
-                      <Lock className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-eh-black dark:text-white mb-4">ISO 27001</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 min-h-[80px]">
-                      Accompagniamo la tua struttura verso la certificazione ISO 27001/27017/27018. Creiamo un Sistema di Gestione della Sicurezza delle Informazioni (SGSI) su misura.
-                  </p>
-                  <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                      <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-eh-green" /> Analisi del Rischio IT</li>
-                      <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-eh-green" /> Policy di Sicurezza</li>
-                      <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-eh-green" /> Audit di Terza Parte</li>
-                  </ul>
-              </div>
-
               {/* NIS2 */}
               <div className="bg-white dark:bg-eh-darkSurface border border-gray-200 dark:border-gray-800 p-8 rounded-2xl shadow-sm hover:border-eh-petrol dark:hover:border-eh-green transition-colors group">
                   <div className="w-14 h-14 bg-eh-blue dark:bg-eh-petrol/20 rounded-xl flex items-center justify-center text-eh-petrol dark:text-eh-green mb-6 group-hover:bg-eh-petrol group-hover:text-white transition-colors">
                       <Server className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold text-eh-black dark:text-white mb-4">Compliance NIS2</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 min-h-[80px]">
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">
                       Supporto operativo per l'adeguamento alla direttiva europea sulla cybersicurezza. Prepariamo la tua organizzazione a garantire la continuità dei servizi essenziali.
                   </p>
                   <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
@@ -122,6 +106,19 @@ const SecurityConsulting: React.FC = () => {
                       <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-eh-green" /> Incident Response Plan</li>
                       <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-eh-green" /> Sicurezza Supply Chain</li>
                   </ul>
+              </div>
+          </div>
+      </section>
+
+      {/* NIS2 Assessment Module */}
+      <section className="py-20 bg-gray-50 dark:bg-black transition-colors duration-300">
+          <div className="max-w-3xl mx-auto px-4">
+              <div className="bg-white dark:bg-eh-darkSurface p-10 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 text-center">
+                  <h2 className="text-3xl font-bold text-eh-black dark:text-white mb-4">La tua struttura deve adeguarsi alla NIS2?</h2>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">Non lasciare nulla al caso. Richiedi una valutazione preliminare gratuita per capire il livello di esposizione della tua organizzazione.</p>
+                  <a href="#contatti" className="inline-flex items-center gap-2 bg-eh-petrol text-white px-8 py-4 rounded-xl font-bold hover:bg-eh-petrol/90 transition-colors text-lg">
+                      Richiedi Valutazione NIS2 <ArrowRight className="h-5 w-5" />
+                  </a>
               </div>
           </div>
       </section>

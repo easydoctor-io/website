@@ -10,6 +10,7 @@ import Layout from './components/Layout';
 import Hero from './components/Hero';
 import CookieBanner from './components/CookieBanner';
 import ScrollToTop from './components/ScrollToTop';
+import { PARTNERS } from './data/partners';
 
 // Lazy Loaded Pages
 const About = React.lazy(() => import('./pages/About'));
@@ -50,24 +51,13 @@ const Home = () => {
                 Collaboriamo con eccellenze del settore
             </p>
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-50 dark:hover:opacity-100">
-                {[
-                  { name: "ASST Crema", domain: "asst-crema.it" },
-                  { name: "Centro Cardiologico Monzino", domain: "cardiologicomonzino.it" },
-                  { name: "CDP Venture Capital", domain: "cdpventurecapital.it" },
-                  { name: "Consip", domain: "consip.it" },
-                  { name: "Almaviva", domain: "almaviva.it" },
-                  { name: "Accenture", domain: "accenture.com" }
-                ].map((partner, idx) => (
-                  <div key={idx} className="h-12 w-auto flex items-center justify-center">
+                {PARTNERS.map((partner, idx) => (
+                  <div key={idx} className="h-16 w-auto flex items-center justify-center">
                       <img 
-                        src={`https://logo.clearbit.com/${partner.domain}`}
+                        src={partner.image}
                         alt={partner.name}
                         title={partner.name}
-                        className="max-h-full max-w-[140px] object-contain"
-                        onError={(e) => {
-                           const target = e.target as HTMLImageElement;
-                           target.style.display = 'none';
-                        }}
+                        className="max-h-full max-w-[160px] object-contain"
                       />
                   </div>
                 ))}
