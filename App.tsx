@@ -45,18 +45,19 @@ const Home = () => {
       <Hero />
 
       {/* SECTION 2: Trusted By / Partners (Moved here as requested) */}
-      <section className="bg-white dark:bg-eh-darkSurface border-b border-gray-100 dark:border-gray-800 py-12 transition-colors duration-300">
+      <section className="bg-white border-b border-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-gray-400 dark:text-gray-500 font-bold mb-8 uppercase tracking-widest text-xs">
+            <p className="text-gray-400 font-bold mb-8 uppercase tracking-widest text-xs">
                 Collaboriamo con eccellenze del settore
             </p>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-500 dark:invert dark:opacity-50 dark:hover:opacity-100">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-500">
                 {PARTNERS.map((partner, idx) => (
                   <div key={idx} className="h-16 w-auto flex items-center justify-center">
                       <img 
                         src={partner.image}
                         alt={partner.name}
                         title={partner.name}
+                        referrerPolicy="no-referrer"
                         className="max-h-full max-w-[160px] object-contain"
                       />
                   </div>

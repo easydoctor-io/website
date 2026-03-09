@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, Sun, Moon, ChevronDown, Mail } from 'lucide-react';
+import { Menu, X, ArrowRight, Sun, Moon, ChevronDown } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 import Breadcrumbs from './Breadcrumbs';
 import { useGlobal } from '../context/GlobalContext';
@@ -170,20 +170,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   Siamo pronti ad ascoltare le esigenze della tua struttura sanitaria. 
                   Compila il modulo per richiedere una demo o una consulenza specialistica.
                 </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center text-eh-petrol dark:text-eh-green shadow-sm border border-gray-100 dark:border-gray-700">
-                      <Mail className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-eh-black dark:text-white">Email</h4>
-                      <a href="mailto:info@easydoctor.io" className="text-gray-600 dark:text-gray-400 hover:text-eh-petrol transition-colors">
-                        info@easydoctor.io
-                      </a>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Right Side: Form */}
